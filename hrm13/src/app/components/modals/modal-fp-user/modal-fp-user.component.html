@@ -1,0 +1,99 @@
+<div class="card-body" [formGroup]="form">
+  <h2 class="laoweb">ຂໍ້ມູນ User ປະຈຳເຄື່ອງປ້ຳໂມງ</h2>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-6">
+        <label for="id">ID :</label>
+        <input
+          type="text"
+          name="id"
+          id="id"
+          class="form-control"
+          placeholder="id"
+          value="0"
+          readonly
+          formControlName="id"
+        />
+      </div>
+      <div class="col-6">
+        <label for="Device ID">Device ID :</label>
+        <input
+          type="text"
+          name="fpId"
+          id="fpId"
+          class="form-control"
+          placeholder="Fingerprint Device ID"
+          formControlName="fpId"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fpUserId">ລະຫັດປ້ຳໂມງ :</label>
+    <input
+      type="text"
+      name="fpUserId"
+      id="fpUserId"
+      class="form-control"
+      placeholder="ລະຫັດປ້ຳໂມງ"
+      formControlName="fpUserId"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="fpUserName">ຊື່ສະແດງ :</label>
+    <input
+      type="text"
+      name="fpUserName"
+      id="fpUserName"
+      class="form-control"
+      placeholder="ຊື່ສະແດງ"
+      formControlName="fpUserName"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="employee">ລະຫັດພະນັກງານ :</label>
+    <div class="form-inline">
+      <input
+        type="text"
+        name="employee"
+        id="employee"
+        class="form-control col-10"
+        placeholder="ລະຫັດພະນັກງານ"
+        formControlName="employee"
+      />
+      &nbsp;&nbsp;
+      <button class="btn btn-outline-primary text-right" (click)="openDialog()">
+        ເລືອກ
+      </button>
+    </div>
+  </div>
+  <!-- 
+  <div class="form-group">
+    <label for="fpRole">ສິດທິປະຈຳເຄື່ອງ :</label>
+    <input
+      type="text"
+      name="fpRole"
+      id="fpRole"
+      class="form-control"
+      placeholder="ສິດທິປະຈຳເຄື່ອງ"
+      formControlName="fpRole"
+    />
+  </div> -->
+
+  <div class="form-group">
+    <button
+      class="btn btn-sm btn-primary"
+      [disabled]="!form.valid"
+      (click)="confirmCreate()"
+    >
+      ບັນທຶກ
+    </button>
+    &nbsp;
+    <button class="btn btn-sm btn-secondary" (click)="onNoClick('CANCEL')">
+      ຍົກເລີກ
+    </button>
+  </div>
+</div>

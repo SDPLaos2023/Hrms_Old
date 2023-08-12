@@ -1,0 +1,166 @@
+<!-- <div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col" [formGroup]="form">
+        <div class="form-group">
+          <label for="ID">ລະຫັດ</label>
+          <input
+            type="text"
+            name="ID"
+            id="ID"
+            class="form-control form-control-sm form-control form-control-sm-sm"
+            placeholder="ລະຫັດ"
+            formControlName="id"
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="nameLao">ຊື່ບໍລິສັດ</label>
+          <input
+            type="text"
+            name="nameLao"
+            id="nameLao"
+            class="form-control form-control-sm form-control form-control-sm-sm"
+            placeholder="ຊື່ບໍລິສັດ"
+            formControlName="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nameEn">ຊື່ບໍລິສັດ ພາສາອັງກິດ</label>
+          <input
+            type="text"
+            name="nameEn"
+            id="nameEn"
+            class="form-control form-control-sm form-control form-control-sm-sm"
+            placeholder="ຊື່ບໍລິສັດ ພາສາອັງກິດ"
+            formControlName="nameEn"
+          />
+        </div>
+        <div class="form-group">
+          <label for="code">ຊື່ຫຍໍ້</label>
+          <input
+            type="text"
+            name="code"
+            id="code"
+            class="form-control form-control-sm form-control form-control-sm-sm"
+            placeholder="ຊື່ຫຍໍ້"
+            formControlName="code"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">ທີ່ຕັ້ງບໍລິສັດ</label>
+          <textarea
+            name="address"
+            id="address"
+            cols="30"
+            rows="10"
+            class="form-control form-control-sm form-control form-control-sm-sm"
+            formControlName="address"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button
+      class="btn btn-sm btn-primary"
+      [disabled]="!form.valid"
+      (click)="ConfirmUpdateCompany()"
+    >
+      <i class="fas fa-save"></i> ບັນທຶກ
+    </button>
+  </div>
+</div> -->
+<div class="card-body" [formGroup]="form">
+  <h2 class="laoweb">ຂໍ້ມູນບໍລິສັດ</h2>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-6">
+        <label for="ID">ID</label>
+        <input
+          type="text"
+          name="ID"
+          id="ID"
+          class="form-control form-control-sm"
+          placeholder="ID"
+          value="0"
+          readonly
+          formControlName="id"
+        />
+      </div>
+      <div class="col-6">
+        <label for="code">Code</label>
+        <input
+          type="text"
+          name="code"
+          id="code"
+          class="form-control form-control-sm"
+          placeholder="Code"
+          formControlName="code"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="name">ຊື່ພາສາລາວ</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="form-control form-control-sm"
+      placeholder="ຊື່ພາສາລາວ"
+      formControlName="name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="nameEn">ຊື່ພາສາອັງກິດ</label>
+    <input
+      type="text"
+      name="nameEn"
+      id="nameEn"
+      class="form-control form-control-sm"
+      placeholder="ຊື່ພາສາອັງກິດ"
+      formControlName="nameEn"
+    />
+  </div>
+  <div class="form-group">
+    <label for="status"> ສະຖານະ</label>
+
+    <select
+      name="status"
+      id="status"
+      class="form-control form-control-sm"
+      formControlName="status"
+    >
+      <option value="ACTIVE">ACTIVE</option>
+      <option value="INACTIVE">INACTIVE</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="address">ທີ່ຕັ້ງບໍລິສັດ</label>
+    <textarea
+      name="address"
+      id="address"
+      cols="30"
+      rows="5"
+      class="form-control form-control-sm form-control form-control-sm-sm"
+      formControlName="address"
+    ></textarea>
+
+    <input type="hidden" name="homebranch" formControlName="homebranch" />
+    <input type="hidden" name="controller" formControlName="controller" />
+  </div>
+  <div class="form-group">
+    <button
+      class="btn btn-sm btn-primary"
+      [disabled]="!form.valid"
+      (click)="ConfirmUpdateCompany()"
+    >
+      ບັນທຶກ
+    </button>
+    &nbsp;
+    <button class="btn btn-sm btn-secondary" (click)="onNoClick('CANCEL')">
+      ຍົກເລີກ
+    </button>
+  </div>
+</div>

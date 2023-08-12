@@ -1,0 +1,68 @@
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group">
+      <button class="btn btn-sm btn-outline-info" (click)="openDialog()">
+        <i class="fas fa fa-plus"></i> ສະຖານະພາບໃຫມ່
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="col-12">
+      <div class="table-responsive" style="overflow-x: auto">
+        <table
+          datatable
+          [dtOptions]="dtOptions"
+          [dtTrigger]="dtTrigger"
+          class="table table-boarderd row-border hover"
+        >
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ID</th>
+              <th>ຊື່ລາວ</th>
+              <th>ຊື່ອັງກິດ</th>
+              <th>ລະຫັດ</th>
+              <th>ສະຖານະ</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of maritalstatus; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.id }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.nameEn }}</td>
+              <td>{{ item.code }}</td>
+              <td>
+                <span
+                  class="badge {{
+                    item.status === 'ACTIVE'
+                      ? ' badge-success'
+                      : ' badge-danger'
+                  }}"
+                  >{{ item.status }}</span
+                >
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button
+                    class="btn btn-sm btn-outline-warning"
+                    (click)="ShowUpdate(item)"
+                  >
+                    <i class="fas fa fa-pencil-alt"></i>
+                  </button>
+                  <button
+                    class="btn btn-sm btn-outline-danger"
+                    (click)="Delete(item)"
+                  >
+                    <i class="fas fa fa-times"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

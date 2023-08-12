@@ -1,0 +1,26 @@
+E:\C#\Black&White\AttLogs\obj\Debug\Interop.zkemkeeper.dll
+E:\C#\Black&White\AttLogs\obj\Debug\AttLogs.csproj.ResolveComReference.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\config.ini
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\AttLogs.exe.config
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\AttLogs.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\AttLogs.pdb
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Debug\Interop.zkemkeeper.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.csproj.AssemblyReference.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\Interop.zkemkeeper.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.csproj.ResolveComReference.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.AttLogsMain.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.DownloadAttLog.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.formConfiguration.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.FormMain.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.Properties.Resources.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.csproj.GenerateResource.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.csproj.CopyComplete
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Debug\AttLogs.pdb

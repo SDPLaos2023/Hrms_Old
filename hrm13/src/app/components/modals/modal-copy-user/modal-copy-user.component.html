@@ -1,0 +1,24 @@
+<div class="card-body border">
+  <div class="row mt-1">
+    <div class="col">
+      <label for="device">ເຄຶ່ອງຈ້ຳໂປ້</label>
+      <select name="device" #fp id="device" class="form-control">
+        <option
+          value="{{ item.id }}"
+          [selected]="item.id == fpId"
+          *ngFor="let item of list"
+        >
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <button class="btn btn-sm btn-success w-100" (click)="doCopy(fp.value)">
+        ບັນທຶກ
+      </button>
+    </div>
+  </div>
+</div>

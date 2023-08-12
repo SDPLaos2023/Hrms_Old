@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-sm btn-outline-info" (click)="openDialog()">
+              <i class="fa fa-plus"></i>
+              ເພີ່ມໃຫມ່
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <table
+              datatable
+              [dtOptions]="dtOptions"
+              [dtTrigger]="dtTrigger"
+              class="table table-boarderd row-border hover"
+            >
+              <thead>
+                <tr>
+                  <th>ລຳດັບ</th>
+                  <th>ລະຫັດ</th>
+                  <th>ຊື່</th>
+                  <th>ສະຖານະ</th>
+                  <th>ຕົວເລືອກ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of list; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ item.id }}</td>
+                  <td>{{ item.shiftname }}</td>
+                  <td>
+                    <span
+                      class="badge {{
+                        item.status === 'ACTIVE'
+                          ? ' badge-success'
+                          : ' badge-danger'
+                      }}"
+                      >{{ item.status }}</span
+                    >
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-sm btn-icon btn-outline-primary mr-1"
+                      [routerLink]="[
+                        '/timesheet/shift-management/detail',
+                        item.id
+                      ]"
+                    >
+                      <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-icon btn-outline-danger mr-1">
+                      <i class="fa fa-times"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

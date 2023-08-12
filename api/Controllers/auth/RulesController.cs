@@ -1,0 +1,86 @@
+﻿using hrm_api.Models;
+using hrm_api.Services.Interfaces.auth;
+using log4net;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace hrm_api.Controllers.auth
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class RulesController : ControllerBase
+    {
+        private readonly IRuleServices service;
+        private readonly ILog log = LogManager.GetLogger(typeof(RulesController));
+
+        public RulesController(IRuleServices _service)
+        {
+            this.service = _service;
+        }
+
+
+        // GET: api/<RulesController>
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var resp = this.service.GetList();
+            if (resp == null)
+            {
+                return NoContent();
+            }
+            return Ok(resp);
+        }
+
+        // GET api/<RulesController>/5
+        [HttpGet("{id}")]
+        public IActionResult Get(string id)
+        {
+            var resp = this.service.Get(id);
+            if (resp == null)
+            {
+                return NoContent();
+            }
+            return Ok(resp);
+        }
+
+        // POST api/<RulesController>
+        [HttpPost]
+        public IActionResult Post([FromBody] Tbrule t)
+        {
+            var resp = this.service.Create(t);
+            if (resp == null)
+            {
+                return NoContent();
+            }
+            return Ok(resp);
+        }
+
+        // PUT api/<RulesController>/5
+        [HttpPut("{id}")]
+        public IActionResult Put(string id, [FromBody] Tbrule t)
+        {
+            var resp = this.service.Update(id,t);
+            if (resp == null)
+            {
+                return NoContent();
+            }
+            return Ok(resp);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(string id)
+        {
+            var resp = this.service.Delete(id);
+            if (resp == null)
+            {
+                return NoContent();
+            }
+            return Ok(resp);
+        }
+    }
+}

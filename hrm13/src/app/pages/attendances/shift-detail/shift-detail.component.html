@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-sm btn-outline-info" (click)="openDialog()">
+              <i class="fa fa-plus"></i>
+              ເພີ່ມໃຫມ່
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <table
+              datatable
+              [dtOptions]="dtOptions"
+              [dtTrigger]="dtTrigger"
+              class="table table-boarderd row-border hover"
+            >
+              <thead>
+                <tr>
+                  <th>ລຳດັບ</th>
+                  <th>ລະຫັດ</th>
+                  <th>ວັນ</th>
+                  <th>ຊື່ຕາລາງເວລາ</th>
+                  <th>ຕົວເລືອກ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of list; let i = index">
+                  <td class="col-1">{{ i + 1 }}</td>
+                  <td class="col-1">{{ item.id }}</td>
+                  <td class="col-1">{{ getday(item.weekday) }}</td>
+                  <td>
+                    {{ getTimetableName(item) }}
+                  </td>
+                  <td class="text-center col-1">
+                    <button class="btn btn-sm btn-icon btn-outline-primary">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

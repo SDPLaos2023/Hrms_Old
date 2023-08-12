@@ -1,0 +1,1 @@
+﻿dotnet ef dbcontext scaffold "server=localhost;user=auth;password=auth;database=hrm_project;charset=utf8;SslMode=none;" MySql.EntityFrameworkCore -o Models -f

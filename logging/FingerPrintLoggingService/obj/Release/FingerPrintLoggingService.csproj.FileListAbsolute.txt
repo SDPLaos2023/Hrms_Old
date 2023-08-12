@@ -1,0 +1,17 @@
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\config.ini
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\FingerPrintLoggingService.exe.config
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\FingerPrintLoggingService.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\FingerPrintLoggingService.pdb
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\Interop.zkemkeeper.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\log4net.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\Newtonsoft.Json.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\Topshelf.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\log4net.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\Newtonsoft.Json.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\bin\Release\Topshelf.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\obj\Release\FingerPrintLoggingService.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\obj\Release\FingerPrintLoggingService.csproj.CopyComplete
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\obj\Release\FingerPrintLoggingService.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\obj\Release\FingerPrintLoggingService.pdb
+C:\Users\Dell\Documents\Dev Files\Xservice\FingerPrintLoggingService\obj\Release\FingerPrintLoggingService.csproj.AssemblyReference.cache

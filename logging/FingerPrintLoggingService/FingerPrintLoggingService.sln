@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FingerPrintLoggingService", "FingerPrintLoggingService.csproj", "{429CBC68-884C-4778-A984-F4963AA6FFBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttLogs", "..\AttLogs\AttLogs.csproj", "{8B8B46E4-868F-4466-82CF-03915BA4E3A3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AttlogSetup", "..\AttlogSetup\AttlogSetup.vdproj", "{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Debug|x86.Build.0 = Debug|Any CPU
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Release|x86.ActiveCfg = Release|Any CPU
+		{429CBC68-884C-4778-A984-F4963AA6FFBC}.Release|x86.Build.0 = Release|Any CPU
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Debug|x86.ActiveCfg = Debug|x86
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Debug|x86.Build.0 = Debug|x86
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Release|x86.ActiveCfg = Release|x86
+		{8B8B46E4-868F-4466-82CF-03915BA4E3A3}.Release|x86.Build.0 = Release|x86
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Debug|Any CPU.ActiveCfg = Debug
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Debug|Any CPU.Build.0 = Debug
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Debug|x86.ActiveCfg = Debug
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Debug|x86.Build.0 = Debug
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Release|Any CPU.ActiveCfg = Release
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Release|Any CPU.Build.0 = Release
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Release|x86.ActiveCfg = Release
+		{453B5C4B-342C-4C36-98B5-3EFCFE1A8D90}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFC32C19-85CC-4CD2-91D0-702A09D36E49}
+	EndGlobalSection
+EndGlobal

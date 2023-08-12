@@ -1,0 +1,1630 @@
+<div class="row">
+  <div class="col-2">
+    <div class="card card-primary card-outline">
+      <div class="card-body box-profile">
+        <div class="text-center">
+          <img
+            class="profile-user-img img-fluid img-circle"
+            src="{{ emp.pathAvatar }}"
+            alt="User profile picture"
+          />
+        </div>
+        <app-upload-avatar
+          *ngIf="!employee.startsWith('TEMP')"
+          [empID]="employee"
+        ></app-upload-avatar>
+      </div>
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="card">
+      <div class="card-header p-2">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="#personal-info" data-toggle="tab"
+              >ຂໍ້ມູນບຸກຄົນ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#marriage-info" data-toggle="tab"
+              >ຂໍ້ມູນການຕິດຕໍ່ ແລະ ຄອບຄົວ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education-info" data-toggle="tab"
+              >ຂໍ້ມູນການສຶກສາ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#employment-info" data-toggle="tab"
+              >ຂໍ້ມູນຕຳແຫນ່ງວຽກ ແລະ ການຈັດປະເພດ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#allowance-info" data-toggle="tab"
+              >ເງິນເດືອນ ແລະ ສະຫວັດດີການຕ່າງໆ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#insurance-info" data-toggle="tab"
+              >ຂໍ້ມູນການປະກັນຕົນ ແລະ ສຸກຂະພາບ</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="!employee.startsWith('TEMP')">
+            <a class="nav-link" href="#fileattachment" data-toggle="tab"
+              >ເອກະສານອື່ນໆ</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="card-body" [formGroup]="formxx">
+        <div class="tab-content">
+          <div class="tab-pane active" id="personal-info">
+            <div formGroupName="employee">
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">ຂໍ້ມູນພະນັກງານ</h3>
+
+                      <div class="card-tools">
+                        <button
+                          type="button"
+                          class="btn btn-tool"
+                          data-card-widget="collapse"
+                          title="Collapse"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                      <div class="row">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <label for="code">ລະຫັດປ້ຳໂມງພະນັກງານ</label>
+
+                              <input
+                                type="text"
+                                name="code"
+                                id="code"
+                                class="form-control form-control-sm"
+                                placeholder="ລະຫັດປ້ຳໂມງພະນັກງານ"
+                                formControlName="code"
+                              />
+                            </div>
+                            <div class="col">
+                              <label for="emp_status">ສະຖານະ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_status"
+                                id="emp_status"
+                                formControlName="status"
+                              >
+                                <option value="ACTIVE">Active</option>
+                                <option value="INACTIVE">Inactive</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <label for="emp_name">ຊື່ ແລະ ນາມສະກຸນ</label>
+                              <input
+                                #namela
+                                type="text"
+                                name="emp_name"
+                                id="emp_name"
+                                class="form-control form-control-sm"
+                                formControlName="name"
+                                placeholder="ຊື່ ແລະ ນາມສະກຸນ"
+                              />
+                            </div>
+                            <div class="col">
+                              <label for="emp_nameEn"
+                                >ຊື່ ແລະ ນາມສະກຸນ (ສາກົນ)</label
+                              >
+                              <input
+                                type="text"
+                                name="emp_nameEn"
+                                id="emp_nameEn"
+                                class="form-control form-control-sm"
+                                placeholder="ຊື່ ແລະ ນາມສະກຸນ (ສາກົນ)"
+                                formControlName="nameEn"
+                              />
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-3">
+                              <label for="emp_dob">ວັນເດືອນປິເກີດ</label>
+                              <input
+                                type="date"
+                                name="emp_dob"
+                                id="emp_dob"
+                                class="form-control form-control-sm"
+                                placeholder="ວັນເດືອນປິເກີດ"
+                                #dobOpt
+                                formControlName="dob"
+                                (change)="AgeCalculate(dobOpt.value)"
+                              />
+                            </div>
+                            <div class="col-3">
+                              <label for="emp_gender">ເພດ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_gender"
+                                formControlName="gender"
+                                id="emp_gender"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option value="M">ຊາຍ</option>
+                                <option value="F">ຍິງ</option>
+                              </select>
+                            </div>
+                            <div class="col-6">
+                              <label for="emp_age">ອາຍຸ (ປີ)</label>
+                              <input
+                                type="number"
+                                name="emp_age"
+                                id="emp_age"
+                                class="form-control form-control-sm"
+                                placeholder="ອາຍຸ"
+                                #ageTxt
+                                readonly
+                                formControlName="age"
+                              />
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6">
+                              <label for="emp_marriage_status">ສະຖານະພາບ</label>
+                              <select
+                                name="emp_marriage_status"
+                                id="emp_marriage_status"
+                                class="form-control form-control-sm"
+                                formControlName="maritalStatus"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option
+                                  value="{{ status.id }}"
+                                  *ngFor="let status of mstatus"
+                                >
+                                  {{ status.name }}
+                                </option>
+                              </select>
+                            </div>
+                            <div class="col-6">
+                              <label for="emp_bloodGroup">ກຣຸບເລືອດ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_bloodGroup"
+                                formControlName="bloodGroup"
+                                id="emp_bloodGroup"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option
+                                  value="{{ bg.id }}"
+                                  *ngFor="let bg of bloodgroups"
+                                >
+                                  {{ bg.name }}
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <label for="emp_nationality">ສັນຊາດ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_nationality"
+                                id="emp_nationality"
+                                formControlName="nationality"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option
+                                  value="{{ nationality.id }}"
+                                  *ngFor="let nationality of nationalities"
+                                >
+                                  {{ nationality.name }}
+                                </option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <label for="emp_race">ເຊື້ອຊາດ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_race"
+                                id="emp_race"
+                                formControlName="race"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option
+                                  value="{{ race.id }}"
+                                  *ngFor="let race of races"
+                                >
+                                  {{ race.name }}
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <label for="emp_address">ທີ່ຢູ່ປະຈຸບັນ</label>
+                              <textarea
+                                type="text"
+                                name="emp_address"
+                                id="emp_address"
+                                class="form-control form-control-sm"
+                                rows="4"
+                                placeholder="ທີ່ຢູ່ປະຈຸບັນ"
+                                formControlName="address"
+                              ></textarea>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <label for="emp_province">ແຂວງ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_province"
+                                id="emp_province"
+                                formControlName="province"
+                                #provinceOpt
+                                (change)="loadDistricts(provinceOpt.value)"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option
+                                  value="{{ province.id }}"
+                                  *ngFor="let province of provinces"
+                                >
+                                  {{ province.name }}
+                                </option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <label for="emp_district">ເມືອງ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_district"
+                                id="emp_district"
+                                formControlName="district"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option
+                                  value="{{ district.id }}"
+                                  *ngFor="let district of districts"
+                                >
+                                  {{ district.name }}
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <label for="emp_country">ປະເທດ</label>
+                              <select
+                                class="form-control form-control-sm"
+                                name="emp_country"
+                                id="emp_country"
+                                formControlName="country"
+                              >
+                                <!-- <option value="">ເລືອກ</option> -->
+                                <option
+                                  value="{{ country.id }}"
+                                  *ngFor="let country of countries"
+                                >
+                                  {{ country.name }}
+                                </option>
+                              </select>
+                              <input
+                                type="text"
+                                name="emp_id"
+                                id="emp_id"
+                                class="form-control form-control-sm invisible"
+                                placeholder="ລະຫັດພະນັກງານ"
+                                formControlName="id"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">ຂໍ້ມູນສຳມະໂນຄົວ ແລະ ບັດຕ່າງໆ</h3>
+
+                      <div class="card-tools">
+                        <button
+                          type="button"
+                          class="btn btn-tool"
+                          data-card-widget="collapse"
+                          title="Collapse"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                      <div class="row mb-1">
+                        <div class="col">
+                          <button
+                            class="btn btn-sm btn-outline-primary"
+                            (click)="openDialogAddIdCard()"
+                          >
+                            <i class="fas fa fa-plus"></i> ເພີ່ມໃຫມ່
+                          </button>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="row mt-2">
+                        <div class="col table-responsive">
+                          <table
+                            datatable
+                            [dtOptions]="dtOptions"
+                            [dtTrigger]="dtTriggerIdCard"
+                            class="table table-boarderd row-border hover"
+                          >
+                            <thead>
+                              <tr>
+                                <th>No.</th>
+                                <!-- <th>ລະຫັດ</th> -->
+                                <th>ເລກທີ</th>
+                                <th>ປະເພດ</th>
+                                <th>ວັນທີຫມົດອາຍຸ</th>
+                                <th>ອອກໃຫ້ໂດຍ</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr
+                                *ngFor="let item of empIdCards; let i = index"
+                                data-id="{{ item.id }}"
+                              >
+                                <td>{{ i + 1 }}</td>
+                                <td>{{ item.idNumber }}</td>
+                                <!-- <td>ເລກທີ</td> -->
+                                <td>{{ item.idTypeNavigation.name }}</td>
+                                <td>
+                                  {{ GetDate(item.idExpiryDate) }}
+                                </td>
+                                <td>{{ item.idIssuedBy }}</td>
+                                <td>
+                                  <button
+                                    class="btn btn-sm btn-outline-warning"
+                                    (click)="ShowUpdateIdCard(item)"
+                                    *ngIf="item.employee.startsWith('E')"
+                                  >
+                                    <i class="fa fa-edit"></i>
+                                  </button>
+                                  &nbsp;
+                                  <button
+                                    class="btn btn-sm btn-outline-danger"
+                                    (click)="removeIdCardRow(item)"
+                                  >
+                                    <i class="fa fa-trash"></i>
+                                  </button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="marriage-info">
+            <!-- <app-employee-contact-info></app-employee-contact-info> -->
+            <div formGroupName="contact">
+              <div class="row">
+                <div class="col-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">ຂໍ້ມູນການຕິດຕໍ່</h3>
+
+                      <div class="card-tools">
+                        <button
+                          type="button"
+                          class="btn btn-tool"
+                          data-card-widget="collapse"
+                          title="Collapse"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                      <div class="col">
+                        <!-- border-left -->
+                        <div class="row">
+                          <div class="col">
+                            <label for="contact_phone">ເບີໂທລະສັບບ້ານ</label>
+                            <input
+                              type="text"
+                              name="contact_phone"
+                              id="contact_phone"
+                              class="form-control form-control-sm"
+                              placeholder="ເບີໂທລະສັບບ້ານ"
+                              formControlName="home"
+                            />
+                          </div>
+                          <div class="col">
+                            <label for="contact_mobile">ເບີໂທມຶຖື</label>
+                            <input
+                              type="text"
+                              name="contact_mobile"
+                              id="contact_mobile"
+                              class="form-control form-control-sm"
+                              placeholder="ເບີໂທມຶຖື"
+                              formControlName="mobile"
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">
+                            <label for="contact_email">e-mail</label>
+                            <input
+                              type="email"
+                              name="contact_email"
+                              id="contact_email"
+                              class="form-control form-control-sm"
+                              formControlName="email"
+                              placeholder="e-mail"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">
+                        ຂໍ້ມູນການຕິດຕໍ່ຜ່ານຊ່ອງທາງອື່ນໆ
+                      </h3>
+
+                      <div class="card-tools">
+                        <button
+                          type="button"
+                          class="btn btn-tool"
+                          data-card-widget="collapse"
+                          title="Collapse"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col-4">
+                            <label for="contact_wa">Whatsapp</label>
+                            <input
+                              type="text"
+                              name="contact_wa"
+                              id="contact_wa"
+                              class="form-control form-control-sm"
+                              placeholder="Whatsapp"
+                              formControlName="wa"
+                            />
+                          </div>
+                          <div class="col-4">
+                            <label for="contact_line">Line ID</label>
+                            <input
+                              type="text"
+                              name="contact_line"
+                              id="contact_line"
+                              class="form-control form-control-sm"
+                              placeholder="Line ID"
+                              formControlName="line"
+                            />
+                          </div>
+                          <div class="col-4">
+                            <label for="contact_wechat">WeChat</label>
+                            <input
+                              type="text"
+                              name="contact_wechat"
+                              id="contact_wechat"
+                              class="form-control form-control-sm"
+                              placeholder="ລະຫັດພະນັກງານ"
+                              formControlName="wechat"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-4">
+                            <label for="contact_fb">Facebook</label>
+                            <input
+                              type="text"
+                              name="contact_fb"
+                              id="contact_fb"
+                              class="form-control form-control-sm"
+                              placeholder="Facebook"
+                              formControlName="facebook"
+                            />
+                          </div>
+                          <div class="col-4">
+                            <label for="contact_twitter">Twitter</label>
+                            <input
+                              type="text"
+                              name="contact_twitter"
+                              id="contact_twitter"
+                              class="form-control form-control-sm"
+                              placeholder="Twitter"
+                              formControlName="twitter"
+                            />
+                          </div>
+                          <div class="col-4">
+                            <label for="contact_skype">Skype</label>
+                            <input
+                              type="text"
+                              name="contact_skype"
+                              id="contact_skype"
+                              class="form-control form-control-sm"
+                              placeholder="Skype"
+                              formControlName="skype"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">ຂໍ້ມູນການຕິດຕໍ່ສຸກເສີນ</h3>
+
+                      <div class="card-tools">
+                        <button
+                          type="button"
+                          class="btn btn-tool"
+                          data-card-widget="collapse"
+                          title="Collapse"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                      <div class="row">
+                        <div class="col">
+                          <label for="contact_person">ຊື່ຜູ້ຕິດຕໍ່</label>
+                          <input
+                            type="text"
+                            name="contact_person"
+                            id="contact_person"
+                            class="form-control form-control-sm"
+                            placeholder="ຊື່ຜູ້ຕິດຕໍ່"
+                            formControlName="contactPerson"
+                          />
+                        </div>
+                        <div class="col">
+                          <label for="contact_number">ເບີໂທລະສັບ</label>
+                          <input
+                            type="text"
+                            name="contact_number"
+                            id="contact_number"
+                            class="form-control form-control-sm"
+                            placeholder="ເບີໂທລະສັບ"
+                            formControlName="contactNumber"
+                          />
+                        </div>
+                        <div class="col">
+                          <label for="contact_relation">ຄວາມສຳພັນ</label>
+                          <input
+                            type="text"
+                            name="contact_relation"
+                            id="contact_relation"
+                            class="form-control form-control-sm"
+                            placeholder="ຄວາມສຳພັນ"
+                            formControlName="contactRelation"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <app-employee-marriage-info></app-employee-marriage-info> -->
+            <div formGroupName="familyContact">
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">ຂໍ້ມູນການສະຖານະພາບ ແລະ ຄອບຄົວ</h3>
+
+                      <div class="card-tools">
+                        <button
+                          type="button"
+                          class="btn btn-tool"
+                          data-card-widget="collapse"
+                          title="Collapse"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                      <div class="row">
+                        <div class="row col-12 mt-2">
+                          <h5>ຄອບຄົວ</h5>
+                        </div>
+                        <div class="col">
+                          <div class="row mt-2">
+                            <div class="col">
+                              <label for="emp_father_name">ຊື່ພໍ່</label>
+                              <input
+                                type="text"
+                                name="emp_father_name"
+                                id="emp_father_name"
+                                class="form-control form-control-sm"
+                                placeholder="ຊື່ພໍ່"
+                                formControlName="fatherName"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label for="emp_father_dob">ວັນເດືອນປີເກີດ</label>
+                              <input
+                                type="date"
+                                name="emp_father_dob"
+                                id="emp_father_dob"
+                                class="form-control form-control-sm"
+                                formControlName="fatherDob"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label for="emp_father_age">ອາຍຸ</label>
+                              <input
+                                type="text"
+                                name="emp_father_age"
+                                id="emp_father_age"
+                                class="form-control form-control-sm"
+                                placeholder="ອາຍຸ"
+                                formControlName="fatherAge"
+                              />
+                            </div>
+                            <div class="col">
+                              <label for="emp_father_contact"
+                                >ຂໍ້ມູນການຕິດຕໍ່</label
+                              >
+                              <input
+                                type="text"
+                                name="emp_father_contact"
+                                id="emp_father_contact"
+                                class="form-control form-control-sm"
+                                placeholder="ຂໍ້ມູນການຕິດຕໍ່"
+                                formControlName="fatherContactNumber"
+                              />
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col">
+                              <label for="emp_mother_name">ຊື່ແມ່</label>
+                              <input
+                                type="text"
+                                name="emp_mother_name"
+                                id="emp_mother_name"
+                                class="form-control form-control-sm"
+                                placeholder="ຊື່ແມ່"
+                                formControlName="motherName"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label for="emp_mother_dob">ວັນເດືອນປີເກີດ</label>
+                              <input
+                                type="date"
+                                name="emp_mother_dob"
+                                id="emp_mother_dob"
+                                class="form-control form-control-sm"
+                                formControlName="motherDob"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label for="emp_mother_age">ອາຍຸ</label>
+                              <input
+                                type="text"
+                                name="emp_mother_age"
+                                id="emp_mother_age"
+                                class="form-control form-control-sm"
+                                placeholder="ອາຍຸ"
+                                formControlName="motherAge"
+                              />
+                            </div>
+                            <div class="col">
+                              <label for="emp_mother_contact"
+                                >ຂໍ້ມູນການຕິດຕໍ່</label
+                              >
+                              <input
+                                type="text"
+                                name="emp_mother_contact"
+                                id="emp_mother_contact"
+                                class="form-control form-control-sm"
+                                placeholder="ຂໍ້ມູນການຕິດຕໍ່"
+                                formControlName="motherContactNumber"
+                              />
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col">
+                              <label for="emp_spouse_name">ຊື່ຄູ່ສົມລົດ</label>
+                              <input
+                                type="text"
+                                name="emp_spouse_name"
+                                id="emp_spouse_name"
+                                class="form-control form-control-sm"
+                                placeholder="ຊື່ຄູ່ສົມລົດ"
+                                formControlName="spouseName"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label for="emp_spouse_dob">ວັນເດືອນປີເກີດ</label>
+                              <input
+                                type="date"
+                                name="emp_spouse_dob"
+                                id="emp_spouse_dob"
+                                class="form-control form-control-sm"
+                                formControlName="spouseDob"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label for="emp_spouse_age">ອາຍຸ</label>
+                              <input
+                                type="text"
+                                name="emp_spouse_age"
+                                id="emp_spouse_age"
+                                class="form-control form-control-sm"
+                                placeholder="ອາຍຸ"
+                                formControlName="spouseAge"
+                              />
+                            </div>
+                            <div class="col">
+                              <label for="emp_spouse_contact"
+                                >ຂໍ້ມູນການຕິດຕໍ່</label
+                              >
+                              <input
+                                type="text"
+                                name="emp_spouse_contact"
+                                id="emp_spouse_contact"
+                                class="form-control form-control-sm"
+                                placeholder="ຂໍ້ມູນການຕິດຕໍ່"
+                                formControlName="spouseContactNumber"
+                              />
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-2">
+                              <label for="emp_children">ລູກ (ຄົນ)</label>
+                              <input
+                                type="number"
+                                name="emp_children"
+                                id="emp_children"
+                                class="form-control form-control-sm"
+                                min="0"
+                                placeholder="ອາຍຸ"
+                                formControlName="noChildren"
+                              />
+                            </div>
+                            <div class="col-2">
+                              <label for="emp_daughter">ລູກສາວ(ຄົນ)</label>
+                              <input
+                                type="number"
+                                name="emp_daughter"
+                                id="emp_daughter"
+                                class="form-control form-control-sm"
+                                placeholder="ລູກສາວ"
+                                min="0"
+                                formControlName="noDaughter"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="tab-pane" id="contact-info"></div> -->
+          <div class="tab-pane" id="education-info">
+            <!-- <app-employee-education-info></app-employee-education-info> -->
+            <div class="row mb-1">
+              <div class="col">
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  (click)="openDialogAddEducation()"
+                >
+                  <i class="fas fa fa-plus"></i> ເພີ່ມໃຫມ່
+                </button>
+              </div>
+            </div>
+            <hr />
+            <div class="row mt-2">
+              <div class="col table-responsive">
+                <table
+                  datatable
+                  [dtOptions]="dtOptions"
+                  [dtTrigger]="dtTriggerEdu"
+                  class="table table-boarderd row-border hover"
+                >
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>ລັບດັບ</th>
+                      <th>ສະຖານສຶກສາ</th>
+                      <th>ລະດັບການສຶກສາ</th>
+                      <th>ສາຂາວິຊາ</th>
+                      <th>GPA/ຄະແນນສະເລ່ຍ</th>
+                      <th>ປີທີ່ຈົບ</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let item of edus; let i = index"
+                      data-id="{{ item.id }}"
+                    >
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ item.sequence }}</td>
+                      <td>{{ item.institutionNavigation.name }}</td>
+                      <td>{{ item.degreeNavigation.name }}</td>
+                      <td>{{ item.major }}</td>
+                      <td>{{ item.gpa }}</td>
+                      <td>{{ item.year }}</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline-warning"
+                          (click)="ShowUpdateEducation(item)"
+                          *ngIf="item.employee.startsWith('E')"
+                        >
+                          <i class="fa fa-edit"></i>
+                        </button>
+                        &nbsp;
+                        <button
+                          class="btn btn-sm btn-outline-danger"
+                          (click)="removeEducationRow(item)"
+                        >
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="employment-info">
+            <!-- <app-employee-employment-info></app-employee-employment-info> -->
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ຮູບແບບ ແລະ ສັນຍາແຮງງານ</h3>
+
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <div formGroupName="contract">
+                      <div class="row">
+                        <div class="col">
+                          <label for="job_employee_type"
+                            >ປະເພດສັນຍາແຮງງານ</label
+                          >
+                          <select
+                            name="job_employee_type"
+                            id="job_employee_type"
+                            class="form-control form-control-sm"
+                            formControlName="contractType"
+                          >
+                            <!-- <option value="">ເລືອກ</option> -->
+                            <option
+                              value="{{ contractType.id }}"
+                              *ngFor="let contractType of contractTypes"
+                            >
+                              {{ contractType.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label for="emp_contract_no">ສັນຍາແຮງງານເລກທີ</label>
+                          <input
+                            type="text"
+                            name="emp_contract_no"
+                            id="emp_contract_no"
+                            class="form-control form-control-sm"
+                            placeholder="ສັນຍາແຮງງານເລກທີ"
+                            formControlName="contractNo"
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <label for="emp_contract_start"
+                            >ວັນທີ່ເລີ່ມຕົ້ນສັນຍາ</label
+                          >
+                          <input
+                            type="date"
+                            name="emp_contract_start"
+                            id="emp_contract_start"
+                            class="form-control form-control-sm"
+                            placeholder="ວັນທີ່ເລີ່ມຕົ້ນສັນຍາ"
+                            formControlName="contractStartAt"
+                          />
+                        </div>
+                        <div class="col">
+                          <label for="emp_contract_end"
+                            >ວັນທີ່ສິ້ນສຸດສັນຍາ</label
+                          >
+                          <input
+                            type="date"
+                            name="emp_contract_end"
+                            id="emp_contract_end"
+                            class="form-control form-control-sm"
+                            placeholder="ວັນທີ່ສິ້ນສຸດສັນຍາ"
+                            formControlName="contractStopAt"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row" formGroupName="probationContract">
+                      <div class="col">
+                        <label for="emp_account_no"
+                          >ວັນທີ່ເລີ່ມຕົ້ນທົດລອງງານ</label
+                        >
+                        <input
+                          type="date"
+                          name="emp_account_no"
+                          id="emp_account_no"
+                          class="form-control form-control-sm"
+                          placeholder="ວັນທີ່ເລີ່ມຕົ້ນທົດລອງງານ"
+                          formControlName="contractStartAt"
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="emp_account_no"
+                          >ວັນທີ່ສິ້ນສຸດທົດລອງງານ</label
+                        >
+                        <input
+                          type="date"
+                          name="emp_account_no"
+                          id="emp_account_no"
+                          class="form-control form-control-sm"
+                          placeholder="ວັນທີ່ສິ້ນສຸດທົດລອງງານ"
+                          formControlName="contractStopAt"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col" formGroupName="classification">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ປະເພດ ແລະ ລະດັບຂັ້ນ</h3>
+
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <div class="row">
+                      <div class="col">
+                        <label for="job_employee_type">ປະເພດພະນັກງານ</label>
+                        <select
+                          name="job_employee_type"
+                          id="job_employee_type"
+                          class="form-control form-control-sm"
+                          formControlName="employeeType"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of employeeTypes"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="job_employee_type">ປະເພດການເຮັດວຽກ</label>
+                        <select
+                          name="job_employee_type"
+                          id="job_employee_type"
+                          class="form-control form-control-sm"
+                          formControlName="employeeWorkingType"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of workingTypes"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="job_employee_type">ລະດັບຂັ້ນ</label>
+                        <select
+                          name="job_employee_type"
+                          id="job_employee_type"
+                          class="form-control form-control-sm"
+                          formControlName="employeeLevel"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of employeeLevels"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="job_employee_type">ກຸ່ມພະນັກງານ</label>
+                        <select
+                          name="job_employee_type"
+                          id="job_employee_type"
+                          class="form-control form-control-sm"
+                          formControlName="employeeGroup"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of employeeGroups"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="job_employee_type">ຫມວດຫມູ່ພະນັກງານ</label>
+                        <select
+                          name="job_employee_type"
+                          id="job_employee_type"
+                          class="form-control form-control-sm"
+                          formControlName="employeeCategory"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of employeeCategories"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-1" formGroupName="employment">
+              <div class="col-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ສັງກັດຫນ່ວຍງານແລະຕຳແຫນ່ງຫນ້າທີ</h3>
+
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <div class="row">
+                      <div class="col">
+                        <label for="job_department">ພະແນກ</label>
+                        <select
+                          name="job_department"
+                          id="job_department"
+                          class="form-control form-control-sm"
+                          formControlName="department"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            [value]="item.id"
+                            *ngFor="let item of departments"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="job_division">ຫນ່ວຍງານ</label>
+                        <select
+                          name="job_division"
+                          id="job_division"
+                          class="form-control form-control-sm"
+                          formControlName="division"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of divisions"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="job_section">ຝ່າຍງານ</label>
+                        <select
+                          name="job_section"
+                          id="job_section"
+                          class="form-control form-control-sm"
+                          formControlName="section"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of sections"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="job_position">ຕຳແຫນ່ງງານ</label>
+                        <select
+                          name="job_position"
+                          id="job_position"
+                          class="form-control form-control-sm"
+                          formControlName="position"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ item.id }}"
+                            *ngFor="let item of positions"
+                          >
+                            {{ item.name }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="insurance-info">
+            <!-- <app-employee-insurance-info></app-employee-insurance-info> -->
+            <div class="row mt-1" formGroupName="insurance">
+              <div class="col-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ການປະກັນຕົນ</h3>
+
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <div class="row">
+                      <div class="col">
+                        <label for="emp_ssn">ເລກທີປະກັນສັງຄົມ</label>
+                        <input
+                          type="text"
+                          name="emp_ssn"
+                          placeholder="ເລກທີປະກັນສັງຄົມ"
+                          id="emp_ssn"
+                          class="form-control form-control-sm"
+                          formControlName="ssn"
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="emp_ssn_rate">ຈຳນວນເງິນສົມທົບ</label>
+                        <input
+                          type="text"
+                          name="emp_ssn_rate"
+                          placeholder="ຈຳນວນເງິນສົມທົບ"
+                          id="emp_ssn_rate"
+                          class="form-control form-control-sm"
+                          formControlName="rate"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ປະກັນໄພ/ປະກັນສຸຂະພາບ</h3>
+
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <div class="row">
+                      <div class="col">
+                        <label for="emp_certificate">ເລກທີ່ປະກັນໄພ</label>
+                        <input
+                          type="text"
+                          name="emp_certificate"
+                          placeholder="ເລກທີ່ປະກັນໄພ"
+                          id="emp_certificate"
+                          class="form-control form-control-sm"
+                          formControlName="insuranceCertificate"
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="emp_insurance_expriry"
+                          >ວັນທີ່ສິ້ນສຸດສັນຍາ</label
+                        >
+                        <input
+                          type="date"
+                          name="emp_insurance_expriry"
+                          placeholder="ວັນທີ່ສິ້ນສຸດສັນຍາ"
+                          id="emp_insurance_expriry"
+                          class="form-control form-control-sm"
+                          formControlName="insuranceExpiryDate"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="row mt-2">
+              <div class="col-12">
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  id="btn-add-health-check"
+                  (click)="openDialogAddHealth()"
+                >
+                  <i class="fa fas fa-plus"></i>
+                  ເພີ່ມໃຫມ່
+                </button>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12 table-responsive">
+                <table class="table tatble-hover table-borderd">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>ວັນທີກວດຄັ້ງຫລ້າສຸດ</th>
+                      <th>ສະຖານທີ່ກວດສຸຂະພາບ</th>
+                      <th>ບັນທຶກຫຍໍ້</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let item of employeehealths; let i = index"
+                      data-id="{{ item.id }}"
+                    >
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ GetDate(item.dateLog) }}</td>
+                      <td>{{ item.location }}</td>
+                      <td>{{ item.description }}</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline-warning"
+                          (click)="ShowUpdateHealth(item)"
+                          *ngIf="item.employee.startsWith('E')"
+                        >
+                          <i class="fa fa-edit"></i>
+                        </button>
+                        &nbsp;
+                        <button
+                          class="btn btn-sm btn-outline-danger"
+                          (click)="removeHealth(item)"
+                        >
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="allowance-info">
+            <!-- <app-employee-allowance-info></app-employee-allowance-info> -->
+            <div class="row mt-1">
+              <div class="col" formGroupName="salarySetting">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ຮູບແບບເງິນເດືອນແລະຈ່າຍເງິນເດືອນ</h3>
+
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <div class="row">
+                      <div class="col">
+                        <label for="emp_base_salary">ເງິນເດືອນພືນຖານ</label>
+                        <input
+                          type="text"
+                          placeholder="ເງິນເດືອນພືນຖານ"
+                          name="emp_base_salary"
+                          id="emp_base_salary"
+                          class="form-control form-control-sm text-right"
+                          formControlName="baseSalary"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="job_employee_type">ທະນາຄານ</label>
+                        <select
+                          name="job_employee_type"
+                          id="job_employee_type"
+                          class="form-control form-control-sm"
+                          formControlName="bank"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ bank.id }}"
+                            *ngFor="let bank of banks"
+                          >
+                            {{ bank.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="emp_account_no">ເລກບັນຊີ</label>
+                        <input
+                          type="text"
+                          name="emp_account_no"
+                          id="emp_account_no"
+                          class="form-control form-control-sm"
+                          placeholder="ເລກບັນຊີ"
+                          formControlName="bankAccount"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="emp_salary_pay_type"
+                          >ຮູບແບບການຈ່າຍເງິນເດືອນ</label
+                        >
+                        <select
+                          name="emp_salary_pay_type"
+                          id="emp_salary_pay_type"
+                          class="form-control form-control-sm"
+                          formControlName="salaryPayType"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ salaryPayType.id }}"
+                            *ngFor="let salaryPayType of salaryPayTypes"
+                          >
+                            {{ salaryPayType.name }}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="emp_salary_type">ຮອບວຽການຈ່ານເງິນນ</label>
+                        <select
+                          name="emp_salary_type"
+                          id="emp_salary_type"
+                          class="form-control form-control-sm"
+                          formControlName="salaryType"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ salaryType.id }}"
+                            *ngFor="let salaryType of salaryTypes"
+                          >
+                            {{ salaryType.name }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col" formGroupName="leaveSetting">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">ຮູບແບບວັນພັກ</h3>
+
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="display: block">
+                    <div class="row">
+                      <div class="col">
+                        <label for="job_employee_type">ປະເພດການລາພັກ</label>
+                        <select
+                          name="job_employee_type"
+                          id="job_employee_type"
+                          class="form-control form-control-sm"
+                          formControlName="employeeAnnualLeave"
+                        >
+                          <!-- <option value="">ເລືອກ</option> -->
+                          <option
+                            value="{{ leaveType.id }}"
+                            *ngFor="let leaveType of annualLeaveTypes"
+                          >
+                            {{ leaveType.name }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="leave_ratio">ຈຳນວນວັນພັກ</label>
+                        <input
+                          type="text"
+                          placeholder="ຈຳນວນວັນພັກ"
+                          name="leave_ratio"
+                          id="leave_ratio"
+                          class="form-control form-control-sm"
+                          formControlName="ratio"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="leave_remain">ວັນພັກຄົງເຫລືອ</label>
+                        <input
+                          type="text"
+                          placeholder="ວັນພັກຄົງເຫລືອ"
+                          name="leave_remain"
+                          id="leave_remain"
+                          class="form-control form-control-sm"
+                          formControlName="remain"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  id="btn-add-health-check"
+                  (click)="openDialogAddAllowance()"
+                >
+                  <i class="fa fas fa-plus"></i>
+                  ເພີ່ມສະຫວັດດີການໃຫມ່
+                </button>
+              </div>
+              <div class="col mt-2 table-responsive">
+                <table class="table table-hovered">
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>ປະເພດ</th>
+                      <th>ຈຳນວນ</th>
+                      <th>ສະຖານະ</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let item of employeeAllowances; let i = index"
+                      data-id="{{ item.id }}"
+                    >
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ item.allowanceNavigation.name }}</td>
+                      <td>{{ item.rate }}</td>
+                      <td>{{ item.status }}</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline-warning"
+                          (click)="ShowUpdateAllowance(item)"
+                          *ngIf="item.employee.startsWith('E')"
+                        >
+                          <i class="fa fa-edit"></i>
+                        </button>
+                        &nbsp;
+                        <button
+                          class="btn btn-sm btn-outline-danger"
+                          (click)="removeAllowance(item)"
+                        >
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="fileattachment">
+            <app-upload-document [empID]="employee"></app-upload-document>
+          </div>
+        </div>
+        <hr />
+        <div class="row mt-3">
+          <div class="col text-right">
+            <button
+              type="button"
+              class="btn btn-sm btn-info"
+              (click)="saveAll()"
+            >
+              <i class="fa fas fa-save"></i> ບັນທຶກຂໍ້ມຸູນ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

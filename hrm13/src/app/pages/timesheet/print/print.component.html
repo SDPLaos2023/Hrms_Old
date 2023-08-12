@@ -1,0 +1,79 @@
+<div class="container laoweb">
+  <div class="row mt-3 mb-4">
+    <div class="col text-right">ວັນທີ : {{ today }}</div>
+  </div>
+  <div class="row mb-3">
+    <div class="col text-center">
+      <h3>
+        <u>ລາຍການປ້ຳໂມງປະຈຳເດືອນ {{ month }}</u>
+      </h3>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col">ຊື່ແລະນາມສະກຸນ : {{ employeeName }}</div>
+    <!-- <div class="col">ສັງກັດຫນ່ວຍງານ : {{ sectionName }}</div> -->
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>ລຳດັບ</th>
+            <th>ວັນທີ</th>
+            <th>ເວລາເຂົ້າ</th>
+            <th>ເວລາອອກ</th>
+
+            <th>ເຂົ້າຊ້າ(ນາທີ)</th>
+            <th>ອອກໄວ(ນາທີ)</th>
+            <th>ຫມາຍເຫດ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data; let i = index">
+            <th>{{ i + 1 }}</th>
+            <td>{{ item["attDate"] | date: "dd/MM/yyyy" }}</td>
+            <td>{{ item["clockIn"] }}</td>
+            <td>{{ item["clockOut"] }}</td>
+            <td>{{ item.lateMin | number }}</td>
+            <td>{{ item.earlyMin | number }}</td>
+            <td>{{ item["remark"] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr />
+  <div class="row mb-2">
+    <div class="col-2">ມື້ເຂົ້າວຽກທັງຫມົດ :</div>
+    <div class="col">
+      {{ summary.totalworkdays }} ມື້ ຊົວໂມງເຮັດວຽກທັງຫມົດ :
+      {{ summary.totalworkhrs | number }} ຊົ່ວໂມງ
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-2">ມື້ຂາດລວມ (ລືມປ້ຳ) :</div>
+    <div class="col">{{ summary.totalmissdays }} ມື້</div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-2">ມາຊ້າລວມ (ນາທີ) :</div>
+    <div class="col">
+      {{ summary.total_late }} ຄັ້ງ ລວມ {{ summary.late_in | number }} ນາທີ
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-2">ກັບໄວລວມ (ນາທີ) :</div>
+    <div class="col">
+      {{ summary.total_early_out }} ຄັ້ງ ລວມ
+      {{ summary.early_out | number }} ນາທີ
+    </div>
+  </div>
+  <hr class="mb-4" />
+  <div class="row mt-3 mb-3">
+    <div class="col text-center">
+      <u>HR</u>
+    </div>
+    <div class="col text-center">
+      <u>ຜູ້ລາຍງານ</u>
+    </div>
+  </div>
+</div>

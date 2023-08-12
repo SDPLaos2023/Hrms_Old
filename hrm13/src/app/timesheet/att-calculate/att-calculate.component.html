@@ -1,0 +1,176 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row" [formGroup]="form">
+          <div class="col-3">
+            <label for="department" class="control-label">ເລືອກພະແນກການ</label>
+            <select
+              name="department"
+              id="department"
+              formControlName="department"
+              class="form-control form-control-sm mb-1"
+            >
+              <option [value]="dept.id" *ngFor="let dept of departments">
+                {{ dept.name }}
+              </option>
+            </select>
+            <button class="btn btn-sm btn-primary" (click)="inquiryEmployees()">
+              ກວດສອບຂໍ້ມູນພະນັກງານ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <button
+            class="btn btn-sm btn-outline-info mr-1"
+            (click)="checkall(true)"
+            [disabled]="employees.length <= 0"
+          >
+            ເລືອກທັງຫມົດ
+          </button>
+          <button
+            class="btn btn-sm btn-outline-secondary mr-1"
+            (click)="checkall(false)"
+            [disabled]="employees.length <= 0"
+          >
+            ບໍ່ເລືອກທັງຫມົດ
+          </button>
+          <button
+            class="btn btn-sm btn-outline-warning mr-1"
+            [disabled]="employees.length <= 0"
+            (click)="GetCalculate()"
+          >
+            ຄຳນວນເວລາ
+          </button>
+          <button
+            class="btn btn-sm btn-outline-primary mr-1"
+            [disabled]="employees.length <= 0"
+          >
+            ບັນທຶກລາຍການ
+          </button>
+          <button
+            class="btn btn-sm btn-outline-success mr-1"
+            [disabled]="employees.length <= 0"
+          >
+            ພິມລາຍການ
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div *ngIf="!calculated" class="row">
+          <div class="col mt-1">
+            <table
+              datatable
+              #table1
+              [dtOptions]="dtOptions"
+              [dtTrigger]="dtTrigger"
+              data-page-length="50"
+              class="table table-boarderd row-border hover"
+            >
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>No.</th>
+                  <th>ລະຫັດພະນັກງານ</th>
+                  <th>ລະຫັດປ້ຳໂມງ</th>
+                  <th>ຊື່ແລະນາມສະກຸນ</th>
+                  <th>ພະແນກການ</th>
+                  <th>ຫນ່ວຍງານ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of employees; let i = index">
+                  <th>
+                    <input
+                      type="checkbox"
+                      [disabled]="item.fp_user_id == ''"
+                      [(ngModel)]="item.checked"
+                    />
+                  </th>
+                  <th>{{ i + 1 }}</th>
+                  <td>{{ item.employeecode }}</td>
+                  <td>{{ item.fp_user_id || "-" }}</td>
+                  <td>{{ item.employeename }}</td>
+                  <td>
+                    {{
+                      item.department == "D" ? "ບໍ່ສັງກັດ" : item.departmentname
+                    }}
+                  </td>
+                  <td>
+                    {{ item.section == "S" ? "ບໍ່ສັງກັດ" : item.sectionname }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row" *ngIf="calculated">
+          <div class="col mt-1">
+            <!--  -->
+            <table
+              datatable
+              [dtOptions]="dtOptions"
+              [dtTrigger]="dtTriggerx"
+              data-page-length="50"
+              id="id2"
+              class="table table-boarderd row-border hover"
+            >
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>ວັນທີສ້າງລາຍການ</th>
+                  <th>ປະຈຳເດືອນ</th>
+                  <th>ລະຫວ່າງວັນທີ</th>
+                  <th>ລະຫັດພະນັກງານ</th>
+                  <th>ຊື່ແລະນາມສະກຸນ</th>
+                  <th>ຈຳນວນວັນ</th>
+                  <th>ຈຳນວນຊົ່ວໂມງ</th>
+                  <th>ເຮັດວຽກຕົວຈິງ (ວັນ)</th>
+                  <th>ເຮັດວຽກຕົວຈິງ (ຊົ່ວໂມງ)</th>
+                  <th>ມາຊ້າ (ຄັ້ງ)</th>
+                  <th>ມາຊ້າ (ນາທີ)</th>
+                  <th>ເມືອໄວ (ຄັ້ງ)</th>
+                  <th>ເມືອໄວ (ນາທີ)</th>
+                  <th>ລວມຂາດວຽກ</th>
+                  <th>ລວມມື້ພັກວຽກ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listCalculated; let i = index">
+                  <th>{{ i + 1 }}</th>
+                  <td>{{ item.data_asofdate }}</td>
+                  <td>{{ item.workingperiod }}</td>
+                  <td>
+                    {{ item.started_at | date: "dd/MM/yyyy" }} -
+                    {{ item.ended_at | date: "dd/MM/yyyy" }}
+                  </td>
+                  <td>{{ item.employeecode }}</td>
+                  <td>{{ item.employeename }}</td>
+                  <td>{{ item.totaldays }}</td>
+                  <td>{{ item.total_hrs }}</td>
+                  <td>{{ item.totalworkdays }}</td>
+                  <td>{{ item.totalworkhrs | number }}</td>
+                  <td>{{ item.total_late }}</td>
+                  <td>{{ item.late_in }}</td>
+                  <td>{{ item.total_early_out }}</td>
+                  <td>{{ item.early_out }}</td>
+                  <td>{{ item.totalmissdays }}</td>
+                  <td>{{ item.totalleaves }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

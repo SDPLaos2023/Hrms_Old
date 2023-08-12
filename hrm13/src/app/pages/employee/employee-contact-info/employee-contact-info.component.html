@@ -1,0 +1,203 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">ຂໍ້ມູນການຕິດຕໍ່</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+              title="Collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body" style="display: block">
+          <div class="col">
+            <!-- border-left -->
+            <div class="row">
+              <div class="col">
+                <label for="contact_phone">ເບີໂທລະສັບບ້ານ</label>
+                <input
+                  type="text"
+                  name="contact_phone"
+                  id="contact_phone"
+                  class="form-control form-control-sm"
+                  placeholder="ເບີໂທລະສັບບ້ານ"
+                  formControlName="Home"
+                />
+              </div>
+              <div class="col">
+                <label for="contact_mobile">ເບີໂທມຶຖື</label>
+                <input
+                  type="text"
+                  name="contact_mobile"
+                  id="contact_mobile"
+                  class="form-control form-control-sm"
+                  placeholder="ເບີໂທມຶຖື"
+                  formControlName="Mobile"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="contact_email">e-mail</label>
+                <input
+                  type="email"
+                  name="contact_email"
+                  id="contact_email"
+                  class="form-control form-control-sm"
+                  formControlName="Email"
+                  placeholder="e-mail"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">ຂໍ້ມູນການຕິດຕໍ່ຜ່ານຊ່ອງທາງອື່ນໆ</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+              title="Collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body" style="display: block">
+          <div class="col">
+            <div class="row">
+              <div class="col-4">
+                <label for="contact_wa">Whatsapp</label>
+                <input
+                  type="text"
+                  name="contact_wa"
+                  id="contact_wa"
+                  class="form-control form-control-sm"
+                  placeholder="Whatsapp"
+                  formControlName="Wa"
+                />
+              </div>
+              <div class="col-4">
+                <label for="contact_line">Line ID</label>
+                <input
+                  type="text"
+                  name="contact_line"
+                  id="contact_line"
+                  class="form-control form-control-sm"
+                  placeholder="Line ID"
+                  formControlName="Line"
+                />
+              </div>
+              <div class="col-4">
+                <label for="contact_wechat">WeChat</label>
+                <input
+                  type="text"
+                  name="contact_wechat"
+                  id="contact_wechat"
+                  class="form-control form-control-sm"
+                  placeholder="ລະຫັດພະນັກງານ"
+                  formControlName="Wechat"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-4">
+                <label for="contact_fb">Facebook</label>
+                <input
+                  type="text"
+                  name="contact_fb"
+                  id="contact_fb"
+                  class="form-control form-control-sm"
+                  placeholder="Facebook"
+                  formControlName="Facebook"
+                />
+              </div>
+              <div class="col-4">
+                <label for="contact_twitter">Twitter</label>
+                <input
+                  type="text"
+                  name="contact_twitter"
+                  id="contact_twitter"
+                  class="form-control form-control-sm"
+                  placeholder="Twitter"
+                  formControlName="Twitter"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">ຂໍ້ມູນການຕິດຕໍ່ສຸກເສີນ</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+              title="Collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body" style="display: block">
+          <div class="row">
+            <div class="col">
+              <label for="contact_person">ຊື່ຜູ້ຕິດຕໍ່</label>
+              <input
+                type="text"
+                name="contact_person"
+                id="contact_person"
+                class="form-control form-control-sm"
+                placeholder="ຊື່ຜູ້ຕິດຕໍ່"
+                formControlName="ContactPerson"
+              />
+            </div>
+            <div class="col">
+              <label for="contact_number">ເບີໂທລະສັບ</label>
+              <input
+                type="text"
+                name="contact_number"
+                id="contact_number"
+                class="form-control form-control-sm"
+                placeholder="ເບີໂທລະສັບ"
+                formControlName="ContactNumber"
+              />
+            </div>
+            <div class="col">
+              <label for="contact_relation">ຄວາມສຳພັນ</label>
+              <input
+                type="text"
+                name="contact_relation"
+                id="contact_relation"
+                class="form-control form-control-sm"
+                placeholder="ຄວາມສຳພັນ"
+                formControlName="ContactRelation"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

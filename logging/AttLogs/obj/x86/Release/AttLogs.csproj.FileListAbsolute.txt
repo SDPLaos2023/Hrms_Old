@@ -1,0 +1,34 @@
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\Interop.zkemkeeper.dll
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.csproj.ResolveComReference.cache
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\bin\x86\Release\AttLogs.exe
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\bin\x86\Release\AttLogs.pdb
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\bin\x86\Release\Interop.zkemkeeper.dll
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\ResolveAssemblyReference.cache
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.AttLogsMain.resources
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.Properties.Resources.resources
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.csproj.GenerateResource.Cache
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.exe
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.pdb
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\config.ini
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\AttLogs.exe.config
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\AttLogs.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\AttLogs.pdb
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\Newtonsoft.Json.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\System.Net.Http.Extensions.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\System.Net.Http.Primitives.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\Newtonsoft.Json.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\System.Net.Http.Extensions.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\System.Net.Http.Primitives.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\bin\x86\Release\Interop.zkemkeeper.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\Interop.zkemkeeper.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.csproj.ResolveComReference.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.AttLogsMain.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.DownloadAttLog.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.formConfiguration.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.FormMain.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.Properties.Resources.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.csproj.GenerateResource.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.csproj.CopyComplete
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\ZK\standalone+sdk-6.3.1.37-doc-2.1.0-demo-1.1.15\Demo-Ver1.1.15\old\C#\Black&White\AttLogs\obj\x86\Release\AttLogs.pdb

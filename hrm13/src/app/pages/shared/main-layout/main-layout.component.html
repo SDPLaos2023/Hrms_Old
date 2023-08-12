@@ -1,0 +1,35 @@
+<div class="wrapper laoweb">
+  <app-top></app-top>
+  <app-admin-left *ngIf="role == 'ROLE_SUPERUSERS'"></app-admin-left>
+  <app-users-left *ngIf="role == 'ROLE_USERS'"></app-users-left>
+  <app-managers-left *ngIf="role == 'ROLE_MANAGERS'"></app-managers-left>
+  <app-hr-left *ngIf="role == 'ROLE_HR'"></app-hr-left>
+
+  <!-- <app-superusers-left></app-superusers-left> -->
+  <app-supervisors-left
+    *ngIf="role == 'ROLE_SUPERVISORS'"
+  ></app-supervisors-left>
+  <div class="content-wrapper">
+    <app-header></app-header>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-right></app-right>
+
+  <app-footer></app-footer>
+</div>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#2ce0ff"
+  type="ball-triangle-path"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>

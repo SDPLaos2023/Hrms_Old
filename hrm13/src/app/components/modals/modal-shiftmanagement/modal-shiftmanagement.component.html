@@ -1,0 +1,57 @@
+<div class="card-body" [formGroup]="formWt">
+  <h2 class="laoweb">ເພິ່ມຂໍ້ມູນໃຫມ່</h2>
+
+  <div class="row mb-2">
+    <div class="col col">
+      <label for="id">ID</label>
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        readonly
+        value="0"
+        formControlName="id"
+      />
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col">
+      <label for="shiftname">ຊື່</label>
+      <input
+        type="text"
+        id="shiftname"
+        class="form-control form-control-sm"
+        value=""
+        formControlName="shiftname"
+      />
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col">
+      <label for="status">ສະຖານະ</label>
+      <select
+        name="status"
+        id="status"
+        class="form-control"
+        formControlName="status"
+      >
+        <option value="ACTIVE">ACTIVE</option>
+        <option value="INACTIVE">INACTIVE</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-center">
+      <button
+        class="btn btn-sm btn-primary mr-1"
+        [disabled]="!formWt.valid"
+        (click)="confirmCreate()"
+      >
+        ບັນທຶກ
+      </button>
+      <button class="btn btn-sm btn-secondary" (click)="onNoClick('CANCEL')">
+        ຍົກເລີກ
+      </button>
+    </div>
+  </div>
+</div>

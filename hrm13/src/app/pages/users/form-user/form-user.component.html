@@ -1,0 +1,203 @@
+<div class="card">
+  <div class="card-body" [formGroup]="form">
+    <div class="row">
+      <div class="col-6">
+        <h4 class="laoweb">ຂໍ້ມູນພະນັກງານ</h4>
+
+        <div class="card-body border">
+          <div class="row">
+            <div class="col-6">
+              <label for="ID">ID</label>
+              <input
+                type="text"
+                name="ID"
+                id="ID"
+                class="form-control form-control-sm"
+                placeholder="USER ID"
+                formControlName="id"
+                value="0"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col-6">
+              <label for="employee">ຊື່ແລະນາມສະກຸນ</label>
+              <input
+                type="text"
+                name="employee"
+                id="employee"
+                class="form-control form-control-sm"
+                placeholder="ຊື່ແລະນາມສະກຸນ"
+                formControlName="name"
+                value=""
+                readonly
+              />
+            </div>
+            <div class="col-6 mt-4">
+              <button
+                *ngIf="!isUpdate"
+                class="btn btn-sm btn-outline-info mt-2"
+                (click)="openDialog()"
+              >
+                <i class="fa fa-search"></i> ເລືອກພະນັກງານ
+              </button>
+            </div>
+          </div>
+
+          <div class="row mt-1">
+            <div class="col-6">
+              <label for="department">ສັງກັດພະແນກ</label>
+              <select
+                name="department"
+                id="department"
+                formControlName="department"
+                class="form-control form-control-sm"
+              >
+                <option [value]="item.id" *ngFor="let item of departments">
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="division">ຫນ່ວຍງານ</label>
+              <select
+                name="division"
+                id="division"
+                formControlName="division"
+                class="form-control form-control-sm"
+              >
+                <option [value]="item.id" *ngFor="let item of divisions">
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="laoweb mt-3">ຂໍ້ມູນຜູ້ໃຊ້</h4>
+
+        <div class="card-body border">
+          <div class="row mt-1">
+            <div class="col-6">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                autocomplete="off"
+                name="username"
+                id="username"
+                class="form-control form-control-sm"
+                placeholder="Username"
+                formControlName="username"
+                value=""
+                [readonly]="isUpdate"
+              />
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col-6">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                autocomplete="off"
+                name="password"
+                id="password"
+                class="form-control form-control-sm"
+                placeholder="password"
+                formControlName="password"
+                value=""
+              />
+              <p class="text-bold text-red mt-1">{{ randomPassword }}</p>
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col-6">
+              <label for="roles">ສິດນຳໃຊ້</label>
+              <select
+                name="roles"
+                id="roles"
+                formControlName="role"
+                class="form-control form-control-sm"
+              >
+                <option [value]="item.id" *ngFor="let item of roles">
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mt-4" *ngIf="!isUpdate">
+            <div class="col-6">
+              <button (click)="makeid()" class="btn btn-sm btn-outline-success">
+                Generate Password
+              </button>
+              <button
+                (click)="Create()"
+                class="btn btn-sm btn-outline-primary float-right"
+              >
+                <i class="fa fas fa-save"></i>
+
+                Create User
+              </button>
+            </div>
+          </div>
+          <div class="row mt-4" *ngIf="isUpdate">
+            <div class="col-9">
+              <button (click)="makeid()" class="btn btn-sm btn-outline-success">
+                Generate Password
+              </button>
+              &nbsp;
+              <button
+                (click)="SaveChangePassword()"
+                class="btn btn-sm btn-outline-info"
+              >
+                <i class="fa fas fa-save"></i>
+                Save Change Password
+              </button>
+              &nbsp;
+
+              <button
+                *ngIf="isUpdate"
+                (click)="Update()"
+                class="btn btn-sm btn-outline-success"
+              >
+                <i class="fa fas fa-save"></i>
+                Save Change
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>
+<!-- <div class="card">
+  <div class="card-body">
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="table-responsive" style="overflow-x: auto">
+          <table
+            mat-table
+            [dataSource]="dataSource"
+            class="table table-boarderd row-border hover"
+          >
+            <ng-container matColumnDef="rolename">
+              <th mat-header-cell *matHeaderCellDef>Role Name</th>
+              <td mat-cell *matCellDef="let element">{{ element.role }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+          <mat-paginator
+            [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons
+            aria-label="Select page of periodic elements"
+          >
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

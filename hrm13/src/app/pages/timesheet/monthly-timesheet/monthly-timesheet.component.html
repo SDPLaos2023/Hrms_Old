@@ -1,0 +1,81 @@
+<!-- <div class="card">
+  <div class="card-header">
+    <div class="btn-group">ຄົນຫາຂໍ້ມູນ</div>
+  </div>
+  <div class="card-body">
+    <div class="row" [formGroup]="form">
+      <div class="col">
+        <label for="datefrom" class="control-label">ປະຈຳເດືອນ</label>
+        <input
+          type="month"
+          name="datefrom"
+          id="datefrom"
+          formControlName="datefrom"
+          class="form-control form-control-sm"
+        />
+      </div>
+      <div class="col mt-3">
+        <button
+          id="btnsearch"
+          [disabled]="!form.valid"
+          (click)="inquiry()"
+          class="btn btn-sm btn-info mt-3"
+        >
+          <i class="fa fa-search"></i>
+          ກວດຂໍ້ມູນ
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group text-bold">{{ CardHeader }}</div>
+  </div>
+  <div class="card-body">
+    <div class="col-12">
+      <div class="table-responsive" style="overflow-x: auto">
+        <table
+          datatable
+          [dtOptions]="dtOptions"
+          [dtTrigger]="dtTrigger"
+          data-page-length="50"
+          class="table table-boarderd row-border hover"
+        >
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ວັນ</th>
+              <th>ວັນທີ</th>
+              <th>ເວລາເຂົ້າ</th>
+              <th>ເວລາອອກ</th>
+              <th>ເຂົ້າຊ້າ(ນາທີ)</th>
+              <th>ອອກໄວ(ນາທີ)</th>
+              <th>ຫມາຍເຫດ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of timesheets; let i = index">
+              <th>{{ i + 1 }}</th>
+              <td>{{ item.attDate | date: "EEEE" }}</td>
+              <td>{{ item.attDate | date: "dd/MM/yyyy" }}</td>
+              <td>{{ item.clockIn }}</td>
+              <td>{{ item.clockOut }}</td>
+              <td>{{ item.lateMin | number }}</td>
+              <td>{{ item.earlyMin | number }}</td>
+              <td>{{ item.remark }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row mt-2 mb-2">
+      <div class="col">
+        <button class="btn btn-primary btn-lg" (click)="goToPrint()">
+          ພິມ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

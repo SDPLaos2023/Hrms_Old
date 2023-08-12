@@ -1,0 +1,54 @@
+<div class="card-body">
+  <div class="row">
+    <div class="col">
+      <h5>ເລືອກຊື່ພະນັກງານ</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col table-responsive">
+      <table
+        datatable
+        [dtOptions]="dtOptions"
+        [dtTrigger]="dtTrigger"
+        class="table table-boarderd row-border hover"
+      >
+        <thead>
+          <tr>
+            <th width="5%">No.</th>
+            <th>ID</th>
+            <th>ຊື່ແລະນາມສະກຸນ</th>
+            <th width="30%">ພະແນກ</th>
+            <th>ຫນ່ວຍງານ</th>
+            <th width="5%">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of list; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.employee_name }}</td>
+            <td>{{ item.department_name }}</td>
+            <td>{{ item.division_name }}</td>
+            <td>
+              <button
+                class="btn btn-sm btn-primary"
+                (click)="SelectEmployee(item)"
+              >
+                ເລືອກ
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="card-footer">
+  <div class="row">
+    <div class="col text-right">
+      <button class="btn btn-sm btn-danger" (click)="onNoClick('CLOSE')">
+        ປິດ
+      </button>
+    </div>
+  </div>
+</div>

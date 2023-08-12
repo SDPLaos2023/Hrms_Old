@@ -1,0 +1,53 @@
+<div class="card-body">
+  <div class="col-12">
+    <div class="table-responsive" style="overflow-x: auto">
+      <table
+        datatable
+        [dtOptions]="dtOptions"
+        [dtTrigger]="dtTrigger"
+        class="table table-boarderd row-border hover"
+      >
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>ເມນູ</th>
+            <th>ກຸ່ມເມນູ</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of list; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.pageGroup }}</td>
+            <td>
+              <button
+                [disabled]="!item.isCanSelect"
+                class="btn btn-sm {{
+                  item.isCanSelect ? ' btn-outline-info' : ' btn-outline-danger'
+                }}"
+                (click)="addRuleItem(item)"
+              >
+                <i class="fa fa-check"></i> ເລືອກ
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="card-footer">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-sm btn-success" (click)="AddBySelectAll()">
+        ເພິ່ມທັງຫມົດ
+      </button>
+    </div>
+    <div class="col text-right">
+      <button class="btn btn-sm btn-danger" (click)="onNoClick('CLOSE')">
+        ປິດ
+      </button>
+    </div>
+  </div>
+</div>

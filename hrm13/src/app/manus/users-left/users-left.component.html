@@ -1,0 +1,104 @@
+<!-- Main Sidebar Container main-sidebar sidebar-dark-primary elevation-4-->
+<aside class="main-sidebar elevation-4 sidebar-light-primary">
+  <!-- Brand Logo -->
+  <a routerLink="dashboard" class="brand-link">
+    <img
+      src="assets/dist/logo.png"
+      alt="AdminLTE Logo"
+      class="brand-image img-circle elevation-3"
+      style="opacity: 0.8"
+    />
+    <span class="brand-text font-weight-light">SITTHI HRM</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <li class="nav-item">
+          <a
+            routerLink="dashboard"
+            [routerLinkActive]="['active']"
+            class="nav-link"
+          >
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>DASHBOARD</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>Attendaces</p>
+            <i class="right fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="timesheet/monthly/self"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປ້ຳໂມງຕົນເອງ</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>ການລາພັກ</p>
+            <i class="right fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="leave-request-form/employee"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ເພິ່ມການຂໍລາພັກໃຫມ່</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="leave-request/employee"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ລາຍການຂໍລາພັກທັງຫມົດ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="leave-histories/employee"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະຫວັດການລາພັກ</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="confirmSignOut()">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+            <p>Sign Out</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

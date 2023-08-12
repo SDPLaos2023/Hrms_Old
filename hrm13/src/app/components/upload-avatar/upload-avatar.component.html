@@ -1,0 +1,21 @@
+<div class="row" style="margin-bottom: 15px">
+  <input
+    type="file"
+    #file
+    placeholder="Choose file"
+    (change)="uploadFile(file.files)"
+    style="display: none"
+  />
+  <button
+    type="button"
+    class="btn btn-primary btn-block mt-2"
+    (click)="file.click()"
+  >
+    ປ່ຽນຮູບໃຫມ່
+  </button>
+  <div class="col-12">
+    <span class="upload btn-block text-center" *ngIf="progress > 0">
+      {{ message }}
+    </span>
+  </div>
+</div>

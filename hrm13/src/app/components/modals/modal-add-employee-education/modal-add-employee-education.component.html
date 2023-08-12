@@ -1,0 +1,116 @@
+<div class="card-body" [formGroup]="form">
+  <h2 class="laoweb">ເພີ່ມຂໍ້ມູນການສຶກສາ</h2>
+  <div class="form-group"></div>
+  <div class="row">
+    <div class="col">
+      <label for="ID">ID</label>
+      <input
+        type="text"
+        name="ID"
+        id="ID"
+        class="form-control"
+        placeholder="ID"
+        value="0"
+        readonly
+        formControlName="id"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label for="institution">ສະຖາບັນການສຶກສາ</label>
+      <select
+        name="institution"
+        id="institution"
+        class="form-control"
+        formControlName="institution"
+        #ii
+        (blur)="institutionChange(ii.value)"
+      >
+        <option *ngFor="let item of institutions" value="{{ item.id }}">
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="degree">ລະດັບການສຶກສາ</label>
+      <select
+        name="degree"
+        id="degree"
+        class="form-control"
+        formControlName="degree"
+        #dd
+        (blur)="degreeChange(dd.value)"
+      >
+        <option *ngFor="let item of degrees" value="{{ item.id }}">
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="year">ປີຈົບການສຶກສາ</label>
+      <input
+        type="text"
+        name="year"
+        id="year"
+        class="form-control"
+        placeholder="ປີຈົບການສຶກສາ"
+        formControlName="year"
+      />
+    </div>
+    <div class="col">
+      <label for="gpa">GPA/ຄະແນນສະເລ່ຍ</label>
+      <input
+        type="text"
+        name="gpa"
+        id="gpa"
+        class="form-control"
+        placeholder="GPA/ຄະແນນສະເລ່ຍ"
+        formControlName="gpa"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="major">ສາຂາວິຊາ</label>
+      <input
+        type="text"
+        name="major"
+        id="major"
+        class="form-control"
+        placeholder="ສາຂາວິຊາ"
+        formControlName="major"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="sequence">ລຳດັບ</label>
+      <input
+        type="number"
+        name="sequence"
+        id="sequence"
+        class="form-control"
+        placeholder="ລຳດັບ"
+        formControlName="sequence"
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-sm btn-primary" (click)="confirmCreate()">
+        ບັນທຶກ
+      </button>
+      &nbsp;
+      <button class="btn btn-sm btn-secondary" (click)="onNoClick('CANCEL')">
+        ຍົກເລີກ
+      </button>
+    </div>
+  </div>
+</div>

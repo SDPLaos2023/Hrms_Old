@@ -1,0 +1,50 @@
+E:\C#\Black&White\AttLogs\obj\Release\Interop.zkemkeeper.dll
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+E:\C#\Black&White\AttLogs\bin\Release\AttLogs.exe
+E:\C#\Black&White\AttLogs\bin\Release\AttLogs.pdb
+E:\C#\Black&White\AttLogs\bin\Release\Interop.zkemkeeper.dll
+E:\C#\Black&White\AttLogs\obj\Release\ResolveAssemblyReference.cache
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.AttLogsMain.resources
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.Properties.Resources.resources
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.GenerateResource.Cache
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+E:\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\bin\Release\AttLogs.exe
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\bin\Release\AttLogs.pdb
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\bin\Release\Interop.zkemkeeper.dll
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\ResolveAssemblyReference.cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.AttLogsMain.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.Properties.Resources.resources
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.GenerateResource.Cache
+D:\wince\work\脱机sdk\文档\光盘资料\脱机通讯开发包(32bit Ver6.2.4.1)\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\Release\Interop.zkemkeeper.dll
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.exe
+D:\WorkSpace\Repository\GIT\standalonesdkdoc\release\sdk-6.2.5.54\Demo\C#\Black&White\AttLogs\obj\Release\AttLogs.pdb
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\config.ini
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\AttLogs.exe.config
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\AttLogs.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\AttLogs.pdb
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\Newtonsoft.Json.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\System.Net.Http.Extensions.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\System.Net.Http.Primitives.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\Newtonsoft.Json.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\System.Net.Http.Extensions.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\System.Net.Http.Primitives.xml
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\bin\Release\Interop.zkemkeeper.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.csproj.AssemblyReference.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\Interop.zkemkeeper.dll
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.csproj.ResolveComReference.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.AttLogsMain.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.DownloadAttLog.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.formConfiguration.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.FormMain.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.Properties.Resources.resources
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.csproj.GenerateResource.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.csproj.CopyComplete
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.exe
+C:\Users\Dell\Documents\Dev Files\Xservice\hrm\AttLogs\obj\Release\AttLogs.pdb

@@ -1,0 +1,23 @@
+.mat-column-select {
+  font-size: 1em;
+  width: 10%;
+}
+
+.mat-column-id {
+  font-size: 1em;
+  width: 10%;
+}
+.mat-column-employee_name {
+  font-size: 1em;
+}
+.mat-column-division_name {
+  font-size: 1em;
+}
+.mat-column-department_name {
+  font-size: 1em;
+}
+
+.mat-column-no {
+  font-size: 1em;
+  width: 10%;
+}

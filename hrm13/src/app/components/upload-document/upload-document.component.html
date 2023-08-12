@@ -1,0 +1,55 @@
+<div class="row" style="margin-bottom: 15px">
+  <input
+    type="file"
+    #file
+    multiple
+    accept=".jpg,.png,.gif,.doc,.docx,.pdf,.xlx,.xlsx"
+    placeholder="Choose file"
+    (change)="uploadFile(file.files)"
+    style="display: none"
+  />
+  <button
+    type="button"
+    class="btn btn-primary btn-block mt-2"
+    (click)="file.click()"
+  >
+    ເລືອກຟາຍທີ່ຕ້ອງການອັບໂຫລດ
+  </button>
+  <div class="col-12">
+    <span class="upload btn-block text-center"> </span>
+  </div>
+</div>
+
+<div class="col mt-1 table-responsive">
+  <table class="table table-hovered">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>ID</th>
+        <th>File Name</th>
+        <th>File Size</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let file of list; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ file.id }}</td>
+        <td>{{ file.displayName }}</td>
+        <td>{{ file.fileSize }}</td>
+        <td>
+          <a class="btn btn-success btn-sm" href="{{ baseUrl + file.path }}">
+            <i class="fa fa-eye"></i>
+          </a>
+          &nbsp;
+          <button
+            class="btn btn-outline-danger btn-sm"
+            (click)="deleteFile(file.id)"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

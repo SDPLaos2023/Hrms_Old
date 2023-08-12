@@ -1,0 +1,576 @@
+<!-- Main Sidebar Container main-sidebar sidebar-dark-primary elevation-4-->
+<aside class="main-sidebar elevation-4 sidebar-light-primary">
+  <!-- Brand Logo -->
+  <a routerLink="dashboard" class="brand-link">
+    <img
+      src="assets/dist/logo.png"
+      alt="AdminLTE Logo"
+      class="brand-image img-circle elevation-3"
+      style="opacity: 0.8"
+    />
+    <span class="brand-text font-weight-light">SITTHI HRM</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img
+          src="assets/dist/img/user2-160x160.jpg"
+          class="img-circle elevation-2"
+          alt="User Image"
+        />
+      </div>
+      <div class="info">
+        <a routerLink="user-profile" class="d-block">{{ user.displayname }}</a>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <li class="nav-item">
+          <a
+            routerLink="dashboard"
+            [routerLinkActive]="['active']"
+            class="nav-link"
+          >
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>DASHBOARD</p>
+          </a>
+        </li>
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>
+              ຂໍ້ມູນພື້ນຖານ
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="company"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຕັ້ງຄ່າບໍລິສັດ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="department"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ພະແນກການ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="division"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຫນ່ວຍງານ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="section"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຝ່າຍງານ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="position"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຕຳແຫນ່ງງານ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="employee-type"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເພດພະນັກງານ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="employee-level"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ລະດັບພະນັກງານ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="employee-group"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເພດກຸ່ມຂອງພະນັກງານ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="employee-category"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຫມວດຫມູ່ຂອງພະນັກງານ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="transaction-type"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເພດການເຄື່ອນໄຫວ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="leave-type"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເພດການລາພັກ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="contract-type"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເພດສັນຍາ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="working-type"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເພດການເຮັດວຽກ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="salary-pay-type"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຮູບແບບການຈ່າຍເງິນເດືອນ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="salary-type"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເພດເງິນເດືອນ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="currencies"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ສະກຸນເງິນ</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                routerLink="banks"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ທະນາຄານ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="resignation-reason"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ເຫດຜົນການລາອອກ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="nationalities"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ສັນຊາດ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="races"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ເຊື້ອຊາດ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="marital-status"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ສະຖານະພາບ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="countries"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປະເທດ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="provinces"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຊື່ແຂວງ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="districts"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຊື່ເມືອງ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="bloodgroup"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ກຣຸບເລືອດ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="education-degree"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ລະດັບການສຶກສາ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="institutions"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ສະຖານສຶກສາ</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>ໂຄງຮ່າງການຈັດຕັ້ງ</p>
+            <i class="right fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="employee-create"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>Organization Chart</p>
+              </a>
+            </li>
+          </ul>
+        </li> -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>ກ່ຽວກັບພະນັກງານ</p>
+            <i class="right fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="new-employee"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ເພິ່ມພະນັກງານໃຫມ່</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="employees"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ພະນັກງານ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="employee-transaction"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ການເຄື່ອນໄຫວ</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>ຈັດການຂໍ້ມູນອຸປະກອນ</p>
+            <i class="right fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="fingerprints"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>Fingerprint Devices</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>Attendaces</p>
+            <i class="right fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="timesheet/inquiry"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປ້ຳໂມງລວມ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="timesheet/monthly/self"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປ້ຳໂມງຕົນເອງ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="timesheet/monthly/self"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປ້ຳໂມງແທນ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="timesheet/monthly/self"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຄິດໄລ່ປ້ຳໂມງ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="timetables"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຈັດການຕາລາວວຽກ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="public-holiday"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຕັ້ງຄ່າວັນພັກລັດຖະການ</p>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a
+                routerLink="draft/public-holiday"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຮ່າງວັນພັກ</p>
+              </a>
+            </li> -->
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-circle"></i>
+            <p>ຂໍ້ມູນຜູ້ໃຊ້ລະບົບ</p>
+            <i class="right fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a
+                routerLink="new-user"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ເພິ່ມຜູ້ໃຊ້ໃຫມ່</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="users"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ລາຍຊື່ຜູ້ໃຊທັງຫມົດ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="user-rights"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ຂໍ້ມູນສິດເຂົ້າເຖິງ</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="user-profile"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>Profile</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="change-password"
+                [routerLinkActive]="['active']"
+                class="nav-link"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>ປ່ຽນລະຫັດຜ່ານ</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="confirmSignOut()">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+            <p>Sign Out</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,152 @@
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group">ຄົນຫາຂໍ້ມູນ</div>
+  </div>
+  <div class="card-body">
+    <div class="row" [formGroup]="form">
+      <div class="col">
+        <label for="department" class="control-label">ພະແນກການ</label>
+        <select
+          name="department"
+          id="department"
+          formControlName="department"
+          class="form-control form-control-sm"
+        >
+          <option [value]="dept.id" *ngFor="let dept of departments">
+            {{ dept.name }}
+          </option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="datefrom" class="control-label">ລະຫວ່າງວັນທີ</label>
+        <input
+          type="date"
+          name="datefrom"
+          id="datefrom"
+          formControlName="datefrom"
+          class="form-control form-control-sm"
+        />
+      </div>
+      <div class="col">
+        <label for="dateto" class="control-label">ຫາວັນທີ</label>
+        <input
+          type="date"
+          name="dateto"
+          id="dateto"
+          formControlName="dateto"
+          class="form-control form-control-sm"
+        />
+      </div>
+      <div class="col">
+        <label for="dateto" class="control-label">ລະຫັດພະນັກງານ</label>
+        <input
+          type="text"
+          name="employee"
+          id="employee"
+          formControlName="employee"
+          class="form-control form-control-sm"
+        />
+      </div>
+      <div class="col mt-3">
+        <button
+          id="btnsearch"
+          [disabled]="!form.valid"
+          (click)="inquiry()"
+          class="btn btn-sm btn-info mt-3"
+        >
+          <i class="fa fa-search"></i>
+          ກວດຂໍ້ມູນ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group">ຂໍ້ມູນການປ້ຳໂມງ</div>
+  </div>
+  <div class="card-body">
+    <div class="col-12">
+      <div class="table-responsive" style="overflow-x: auto">
+        <table
+          datatable
+          [dtOptions]="dtOptions"
+          [dtTrigger]="dtTrigger"
+          data-page-length="50"
+          class="table table-boarderd row-border hover"
+        >
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ID</th>
+              <th>ລະຫັດປ້ຳໂມງ</th>
+              <th>ຊື່ແລະນາມສະກຸນ</th>
+              <th>ສັງກັດຫນ່ວຍງານ</th>
+              <th>ວັນທີ</th>
+              <th>ເວລາເຂົ້າ</th>
+              <th>ເວລາອອກ</th>
+              <th>ເວລາເຂົ້າ</th>
+              <th>ເວລາອອກ</th>
+              <!-- <th>ເຂົ້າຊ້າ(ນາທີ)</th>
+              <th>ອອກໄວ(ນາທີ)</th> -->
+              <!-- <th>ເຮັດວຽກ(ນາທີ)</th> -->
+              <!-- <th>ຫມາຍເຫດ</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list; let i = index">
+              <th>{{ i + 1 }}</th>
+              <td>{{ item.employee }}</td>
+              <td>{{ item.fpUserId }}</td>
+              <td>
+                <a class="text-primary hover">{{ item.employeeName }} </a>
+              </td>
+              <td>
+                {{
+                  item.section == "ເລືອກ"
+                    ? "ຍັງບໍ່ຖືກສັງກັດຫນ່ວຍງານ"
+                    : item.section
+                }}
+              </td>
+              <td>{{ item.attDate | date : "dd/MM/yyyy" }}</td>
+              <td>{{ item.cIn }}</td>
+              <td>{{ item.cOut }}</td>
+              <td>
+                <input
+                  type="time"
+                  name="clockIn"
+                  id="{{ 'clockIn' + i }}"
+                  class="form-control"
+                  [(ngModel)]="item.newCIn"
+                />
+              </td>
+              <td>
+                <input
+                  type="time"
+                  name="clockOut"
+                  id="{{ 'clockOut' + i }}"
+                  class="form-control"
+                  [(ngModel)]="item.newCOut"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="row">
+      <div class="col">
+        <button
+          [disabled]="isDisabled"
+          class="btn btn-primary"
+          (click)="save()"
+        >
+          ບັນທຶກ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

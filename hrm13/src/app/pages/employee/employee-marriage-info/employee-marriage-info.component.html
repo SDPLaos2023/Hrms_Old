@@ -1,0 +1,192 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">ຂໍ້ມູນການສະຖານະພາບ ແລະ ຄອບຄົວ</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+              title="Collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body" style="display: block">
+          <div class="row">
+            <div class="row col-12 mt-2">
+              <h5>ຄອບຄົວ</h5>
+            </div>
+            <div class="col">
+              <div class="row mt-2">
+                <div class="col">
+                  <label for="emp_father_name">ຊື່ພໍ່</label>
+                  <input
+                    type="text"
+                    name="emp_father_name"
+                    id="emp_father_name"
+                    class="form-control form-control-sm"
+                    placeholder="ຊື່ພໍ່"
+                    formControlName="FatherName"
+                  />
+                </div>
+                <div class="col-2">
+                  <label for="emp_father_dob">ວັນເດືອນປີເກີດ</label>
+                  <input
+                    type="date"
+                    name="emp_father_dob"
+                    id="emp_father_dob"
+                    class="form-control form-control-sm"
+                    formControlName="FatherDob"
+                  />
+                </div>
+                <div class="col-2">
+                  <label for="emp_father_age">ອາຍຸ</label>
+                  <input
+                    type="text"
+                    name="emp_father_age"
+                    id="emp_father_age"
+                    class="form-control form-control-sm"
+                    placeholder="ອາຍຸ"
+                    formControlName="FatherAge"
+                  />
+                </div>
+                <div class="col">
+                  <label for="emp_father_contact">ຂໍ້ມູນການຕິດຕໍ່</label>
+                  <input
+                    type="text"
+                    name="emp_father_contact"
+                    id="emp_father_contact"
+                    class="form-control form-control-sm"
+                    placeholder="ຂໍ້ມູນການຕິດຕໍ່"
+                    formControlName="FatherContactNumber"
+                  />
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <label for="emp_mother_name">ຊື່ແມ່</label>
+                  <input
+                    type="text"
+                    name="emp_mother_name"
+                    id="emp_mother_name"
+                    class="form-control form-control-sm"
+                    placeholder="ຊື່ແມ່"
+                    formControlName="MotherName"
+                  />
+                </div>
+                <div class="col-2">
+                  <label for="emp_mother_dob">ວັນເດືອນປີເກີດ</label>
+                  <input
+                    type="date"
+                    name="emp_mother_dob"
+                    id="emp_mother_dob"
+                    class="form-control form-control-sm"
+                    formControlName="MotherDob"
+                  />
+                </div>
+                <div class="col-2">
+                  <label for="emp_mother_age">ອາຍຸ</label>
+                  <input
+                    type="text"
+                    name="emp_mother_age"
+                    id="emp_mother_age"
+                    class="form-control form-control-sm"
+                    placeholder="ອາຍຸ"
+                    formControlName="MotherAge"
+                  />
+                </div>
+                <div class="col">
+                  <label for="emp_mother_contact">ຂໍ້ມູນການຕິດຕໍ່</label>
+                  <input
+                    type="text"
+                    name="emp_mother_contact"
+                    id="emp_mother_contact"
+                    class="form-control form-control-sm"
+                    placeholder="ຂໍ້ມູນການຕິດຕໍ່"
+                    formControlName="MotherContactNumber"
+                  />
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <label for="emp_spouse_name">ຊື່ຄູ່ສົມລົດ</label>
+                  <input
+                    type="text"
+                    name="emp_spouse_name"
+                    id="emp_spouse_name"
+                    class="form-control form-control-sm"
+                    placeholder="ຊື່ຄູ່ສົມລົດ"
+                    formControlName="SpouseName"
+                  />
+                </div>
+                <div class="col-2">
+                  <label for="emp_spouse_dob">ວັນເດືອນປີເກີດ</label>
+                  <input
+                    type="date"
+                    name="emp_spouse_dob"
+                    id="emp_spouse_dob"
+                    class="form-control form-control-sm"
+                    formControlName="SpouseDob"
+                  />
+                </div>
+                <div class="col-2">
+                  <label for="emp_spouse_age">ອາຍຸ</label>
+                  <input
+                    type="text"
+                    name="emp_spouse_age"
+                    id="emp_spouse_age"
+                    class="form-control form-control-sm"
+                    placeholder="ອາຍຸ"
+                    formControlName="SpouseAge"
+                  />
+                </div>
+                <div class="col">
+                  <label for="emp_spouse_contact">ຂໍ້ມູນການຕິດຕໍ່</label>
+                  <input
+                    type="text"
+                    name="emp_spouse_contact"
+                    id="emp_spouse_contact"
+                    class="form-control form-control-sm"
+                    placeholder="ຂໍ້ມູນການຕິດຕໍ່"
+                    formControlName="SpouseContactNumber"
+                  />
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-2">
+                  <label for="emp_children">ລູກ (ຄົນ)</label>
+                  <input
+                    type="number"
+                    name="emp_children"
+                    id="emp_children"
+                    class="form-control form-control-sm"
+                    min="0"
+                    placeholder="ອາຍຸ"
+                    formControlName="NoChildren"
+                  />
+                </div>
+                <div class="col-2">
+                  <label for="emp_daughter">ລູກສາວ(ຄົນ)</label>
+                  <input
+                    type="number"
+                    name="emp_daughter"
+                    id="emp_daughter"
+                    class="form-control form-control-sm"
+                    placeholder="ລູກສາວ"
+                    min="0"
+                    formControlName="NoDaughter"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

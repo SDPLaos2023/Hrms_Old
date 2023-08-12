@@ -1,0 +1,133 @@
+<div class="row mt-2 mb-2">
+  <div class="col-1 offset-2">
+    <img
+      width="150"
+      src="assets/dist/img/sitthilogo.png"
+      alt="Sitthi Logistic"
+    />
+  </div>
+  <div class="col-8">
+    <h2 class="text-nowrap">{{ employeeInfo.departmentName }}</h2>
+    <h2 class="text-nowrap">{{ employeeInfo.departmentNameEn }}</h2>
+    <hr />
+    <p>ທີ່ຢູ່ :</p>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col">
+    <h3 class="text-center"><strong>ໃບຕິດຕາມການລາພັກ</strong></h3>
+  </div>
+</div>
+
+<div class="row mb-5">
+  <div class="col">
+    <table class="table borded">
+      <thead>
+        <tr class="mb-2">
+          <th colspan="4">
+            <strong> ສັງກັດ : {{ employeeInfo.departmentName }}</strong>
+          </th>
+          <th colspan="5">
+            <strong>
+              ລະຫັດພະນັກງານ (ລະຫັດປ້ຳໂມງ) : {{ employeeInfo.code }}
+            </strong>
+          </th>
+        </tr>
+        <tr>
+          <th>No</th>
+          <th>ສ້າງເມື່ອ</th>
+          <th>ຈາກວັນທີ</th>
+          <th>ຫາວັນທີ</th>
+          <th>ຈຳນວນ (ວັນ)</th>
+          <th>ປະເພດການລາພັກ</th>
+          <th max-width="300">ເຫດຜົນການລາພັກ</th>
+          <th class="text-nowrap">ຫົວຫນ້າຜູ້ອະນຸມັດ</th>
+          <th class="text-nowrap">HR ຜູ້ອະນຸມັດ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.createdAt | date : "dd/MM/yyyy" }}</td>
+          <td>{{ item.datefrom | date : "dd/MM/yyyy" }}</td>
+          <td>{{ item.dateto | date : "dd/MM/yyyy" }}</td>
+          <td>{{ item.total }}</td>
+          <td class="text-nowrap">{{ item.leaveTypeName }}</td>
+          <td>{{ item.remark }}</td>
+          <td class="text-nowrap">{{ item.spApprovalName }}</td>
+          <td class="text-nowrap">{{ item.hrApprovalName }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <table class="table borded">
+      <tbody>
+        <tr>
+          <td *ngFor="let item of summary; let i = index" class="text-center">
+            <p>{{ item.name }}</p>
+            <br />
+            <strong>{{ item.sum | number }}</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table> -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col text-center">
+    <h4 class="mb-5">ຜູ້ລາຍງານ</h4>
+    <br />
+    _____________________________
+    <h5 class="text-center mt-1">({{ employeeInfo.name }})</h5>
+  </div>
+  <div class="col text-center">
+    <h4 class="mb-5">HR</h4>
+    <br />
+    _____________________________
+  </div>
+</div>
+<br /><br />
+<section>
+  <div class="row">
+    <div class="col">
+      <strong
+        ><u>ຫມາຍເຫດ</u>: ກຳນົດເວລາໃນການລາພັກ ແລະ
+        ຂັ້ນຕອນການຂໍອະນຸຍາດລາພັກຕ່າງໆ</strong
+      ><br />
+      <ol>
+        <li>
+          ພັກປະຈຳປີ 15 ວັນ (ການລາພັກແຕ່ລະຄັ້ງບໍ່ໃຫ້ພັກຕິດຕໍ່ກັນເກີນ 06ວັນ)
+          ແລະຕ້ອງຂຽນໃບລາພັກລ່ວງຫນ້າຢ່າງຫນ້ອຍ 03 ວັນ
+          ແລະຕ້ອງໄດ້ຮັບອະນຸຍາດຈາກຝ່າຍທີ່ກ່ຽວຂ້ອງຈຶ່ງສາມາດພັກໄດ້
+        </li>
+        <li>
+          ພັກລາກິດທຸລະ 06 ວັນ (ວຽກທີ່ມີຄວາມຈຳເປັນສຸກເສີນໃນຄອບຄົວ
+          ຫຼືເກີດເຄາະຮ້າຍໃນຄອບຄົວ) ຕ້ອງແຈ້ງກ່ອນລ່ວງຫນ້າ 01 ວັນ
+          ຫຼືດ່ວນແທ້ຕ້ອງໂທຄອບກ່ອນ
+        </li>
+        <li>
+          ພັກລາປ່ວຍ 30 ວັນ/ຄົນ ກໍລະນີມີຜ່າຕັດໃຫຍ່ແມ່ນ 60 ວັນ
+          (ແຕ່ຕ້ອງມີໃບຢັ້ງຢືນຈາກແພດ/ໂຮງຫມໍ)
+          ລາພັກແຕ່ລະຄັ້ງຕ້ອງແຈ້ງໃຫ້ຫົວຫນ້າຝ່ານທີ່ກ່ຽວຂ້ອງຮັບຊາບ ແລະ
+          ເອົາໃບຢັ້ງຢືນຈາກແພດ
+        </li>
+        <li>
+          ພັກເກີດລູກ 105 ວັນ (ສຳລັບພະນັກງານຍິງ) ໃຫ້ແຈ້ງຫົວຫນ້າຝ່າຍ
+          ແລະໃຫ້ມີໃບຢັ້ງຢືນຈາກແພດ (ໃບແຈ້ງເກີດ)
+        </li>
+        <li>
+          ພັກເມຍເກີດລູກ 03 ວັນ (ສຳລັບພະນັກງານຊາຍ)
+          ແລະສາມາດໃຊ້ສິດລາພັກປະຈຳປີບໍ່ເກີນ 03 ວັນ (ລວມບໍ່ເກີນ 06 ວັນ)
+        </li>
+        <li>
+          ພັກແຕ່ງານ 03 ວັນ ແລະສາມາດໃຊ້ສິດລາພັກປະຈຳປີບໍ່ເກີນ 03 ວັນ (ລວມບໍ່ເກີນ
+          06 ວັນ)
+        </li>
+        <li>
+          ພະນັກງານຂາດໂດຍບໍ່ໄດ້ຮັບໄດ້ຮັບອະນຸຍາດ (ບໍ່ມາການ) ຂາດບໍ່ມີເຫດຜົນ
+          ຈະຖືກຕັດເງິນເດືອນເປັນມື້ ຕາມລະບຽບການຂອງບໍລິສັດ
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>

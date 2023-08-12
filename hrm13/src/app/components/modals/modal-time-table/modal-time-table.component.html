@@ -1,0 +1,165 @@
+<div class="card-body" [formGroup]="formWt">
+  <h2 class="laoweb">ຂໍ້ມູນຕາລາເວລາເຮັດວຽກ</h2>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-6">
+        <label for="ID">ID</label>
+        <input
+          type="text"
+          name="ID"
+          id="ID"
+          class="form-control"
+          placeholder="ID"
+          value="0"
+          readonly
+          formControlName="id"
+        />
+      </div>
+      <div class="col-6">
+        <!-- <label for="code">Code</label>
+        <input
+          type="text"
+          name="code"
+          id="code"
+          class="form-control"
+          placeholder="Code"
+          formControlName="code"
+        /> -->
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="name">ຊື່</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="form-control"
+      placeholder="ຊື່ຕາລາງເວລາ"
+      formControlName="name"
+    />
+  </div>
+
+  <div class="row mt-1">
+    <div class="col">
+      <div class="form-group">
+        <label for="startIn">ເວລາເຂົ້າ</label>
+        <input
+          type="time"
+          name="startIn"
+          id="startIn"
+          class="form-control"
+          placeholder="ເວລາເຂົ້າ"
+          formControlName="startIn"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="startOut">ເວລາອອກ</label>
+        <input
+          type="time"
+          name="startOut"
+          id="startOut"
+          class="form-control"
+          placeholder="ເວລາອອກ"
+          formControlName="startOut"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col">
+      <div class="form-group">
+        <label for="breakIn">ເວລາພັກເຂົ້າ</label>
+        <input
+          type="time"
+          name="breakIn"
+          id="breakIn"
+          class="form-control"
+          placeholder="ເວລາພັກເຂົ້າ"
+          formControlName="breakIn"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="breakOut">ເວລາພັກອອກ</label>
+        <input
+          type="time"
+          name="breakOut"
+          id="breakOut"
+          class="form-control"
+          placeholder="ເວລາພັກອອກ"
+          formControlName="breakOut"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col">
+      <div class="form-group">
+        <label for="lateIn">ເຂົ້າຊ້າ</label>
+        <input
+          type="number"
+          name="lateIn"
+          id="lateIn"
+          class="form-control"
+          placeholder="ເຂົ້າຊ້າ"
+          formControlName="lateIn"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="earlyOut">ກັບກ່ອນ</label>
+        <input
+          type="number"
+          name="earlyOut"
+          id="earlyOut"
+          class="form-control"
+          placeholder="ກັບກ່ອນ"
+          formControlName="earlyOut"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="dayOfWeek">ມື້ເຮັດວຽກວຽກ</label>
+    <input
+      type="text"
+      name="dayOfWeek"
+      id="dayOfWeek"
+      class="form-control"
+      placeholder="ມື້ເຮັດວຽກວຽກ 0 ຫາ 6 ວັນຈັນແມ່ນ 0 ວັນທິດແມ່ນ 6"
+      formControlName="dayOfWeek"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="status"> ສະຖານະ</label>
+    <select
+      name="status"
+      id="status"
+      class="form-control"
+      formControlName="status"
+    >
+      <option value="ACTIVE">ACTIVE</option>
+      <option value="INACTIVE">INACTIVE</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button
+      class="btn btn-sm btn-primary"
+      [disabled]="!formWt.valid"
+      (click)="confirmCreate()"
+    >
+      ບັນທຶກ
+    </button>
+    &nbsp;
+    <button class="btn btn-sm btn-secondary" (click)="onNoClick('CANCEL')">
+      ຍົກເລີກ
+    </button>
+  </div>
+</div>

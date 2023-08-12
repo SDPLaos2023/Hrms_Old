@@ -1,0 +1,75 @@
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group">ຕາຕາລາງເວລາເຮັດວຽກທັງຫມົດ</div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-sm btn-outline-info" (click)="openDialog()">
+          <i class="fa fa-plus"></i>
+          ເພີ່ມຕາລາງເວລາໃຫມ່
+        </button>
+      </div>
+    </div>
+    <br />
+    <div class="col-12">
+      <div class="table-responsive" style="overflow-x: auto">
+        <table
+          datatable
+          [dtOptions]="dtOptions"
+          [dtTrigger]="dtTrigger"
+          class="table table-boarderd row-border hover"
+        >
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ID</th>
+              <th>ຊື່</th>
+              <th>ເວລາເຂົ້າ</th>
+              <th>ເວລາອອກ</th>
+              <th>ເວລາພັກອອກ</th>
+              <th>ເວລາພັກເຂົ້າ</th>
+              <th>ສາມາດເຂົ້າຊ້າ (ນາທີ)</th>
+              <th>ກັບກ່ອນ (ນາທີ)</th>
+              <!-- <th>ອັດຕາສ່ວນ</th> -->
+              <th>ມື້ເຮັດວຽກ</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.id }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.startIn }}</td>
+              <td>{{ item.startOut }}</td>
+              <td>{{ item.breakOut }}</td>
+              <td>{{ item.breakIn }}</td>
+              <td>{{ item.lateIn }}</td>
+              <td>{{ item.earlyOut }}</td>
+              <!-- <td>{{ item.ratio }}</td> -->
+              <td>{{ item.dayOfWeek }}</td>
+              <td>
+                <div class="btn-group">
+                  <button
+                    class="btn btn-sm btn-outline-warning"
+                    (click)="ShowUpdate(item)"
+                  >
+                    <i class="fa fa-edit"></i>
+                  </button>
+
+                  <button
+                    class="btn btn-sm btn-outline-danger"
+                    (click)="Delete(item)"
+                  >
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

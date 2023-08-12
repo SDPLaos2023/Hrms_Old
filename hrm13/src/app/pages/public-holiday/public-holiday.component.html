@@ -1,0 +1,76 @@
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group">ກວດຕັ້ງຄ່າວັນພັກຕ່າງໆ</div>
+  </div>
+  <div class="card-body">
+    <div class="row mt-1">
+      <div class="col-2">
+        <label for="year">ປະຈຳປິ</label>
+        <input
+          [(ngModel)]="activeYear"
+          type="number"
+          name="year"
+          min="1990"
+          max="2999"
+          step="1"
+          id="year"
+          class="form-control form-control-sm"
+        />
+      </div>
+
+      <div class="col-2 mt-3">
+        <button class="btn btn-primary btn-sm mt-3" (click)="LoadAll()">
+          <i class="fa fa-search"> </i> ກວດເບິ່ງ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group">
+      <button class="btn btn-outline-info btn-sm mt-1" (click)="openDialog()">
+        <i class="fa fa-plus"> </i> ເພີ່ມວັນພັກໃຫມ່
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="col-12">
+      <div class="table-responsive" style="overflow-x: auto">
+        <table
+          datatable
+          [dtOptions]="dtOptions"
+          [dtTrigger]="dtTrigger"
+          class="table table-boarderd row-border hover"
+        >
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ວັນທີ</th>
+              <th>ຊື່ວັນພັກ ວັນສຳຄັນ</th>
+              <th>ລາຍລະອຽດ</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.date | date: "dd/MM/yyyy" }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-warning btn-sm"
+                  (click)="showUpdate(item)"
+                >
+                  <i class="fa fa-edit"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

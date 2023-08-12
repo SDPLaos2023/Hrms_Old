@@ -1,0 +1,111 @@
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group">ຄົນຫາຂໍ້ມູນ</div>
+  </div>
+  <div class="card-body">
+    <div class="row" [formGroup]="form">
+      <div class="col">
+        <label for="attDate" class="control-label">ວັນທີ</label>
+        <input
+          type="date"
+          name="attDate"
+          id="attDate"
+          formControlName="attDate"
+          class="form-control form-control-sm"
+        />
+      </div>
+      <div class="col">
+        <label for="fpUserId" class="control-label">ລະຫັດປ້ຳໂມງ</label>
+        <input
+          type="text"
+          name="fpUserId"
+          id="fpUserId"
+          formControlName="fpUserId"
+          class="form-control form-control-sm"
+        />
+      </div>
+      <div class="col mt-3">
+        <button
+          id="btnsearch"
+          [disabled]="!form.valid"
+          (click)="inquiry()"
+          class="btn btn-sm btn-info mt-3"
+        >
+          <i class="fa fa-search"></i>
+          ກວດຂໍ້ມູນ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="row mb-3" *ngFor="let item of list; let i = index">
+      <div class="col">
+        <label for="name" class="control-label">ຊື່ພະນັກງານ</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          readonly
+          [(ngModel)]="employeeName"
+        />
+      </div>
+      <div class="col">
+        <label for="section" class="control-label">ສັງກັດຫນ່ວຍງານ</label>
+        <input
+          type="text"
+          name="section"
+          readonly
+          id="section"
+          class="form-control"
+          [(ngModel)]="item.sectionName"
+        />
+      </div>
+      <div class="col">
+        <label for="attDate" class="control-label">ວັນທີ</label>
+        <input
+          type="date"
+          name="attDate"
+          id="attDate"
+          class="form-control"
+          disabled
+          [(ngModel)]="item.attDate"
+        />
+      </div>
+      <div class="col">
+        <label for="clockIn" class="control-label">ເວລາເຂົ້າ</label>
+        <input
+          type="time"
+          name="clockIn"
+          id="clockIn"
+          class="form-control"
+          [(ngModel)]="item.clockIn"
+        />
+      </div>
+      <div class="col">
+        <label for="clockOut" class="control-label">ເວລາອອກ</label>
+        <input
+          type="time"
+          name="clockOut"
+          id="clockOut"
+          class="form-control"
+          [(ngModel)]="item.clockOut"
+        />
+      </div>
+      <div class="col">
+        <label for="btnx" class="control-label">ລຶບອອກ</label>
+        <br />
+        <button class="btn btn-danger btn-icon" (click)="delete(i)">
+          ລຶບອອກ
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" (click)="save()">ບັນທຶກ</button>
+      </div>
+    </div>
+  </div>
+</div>

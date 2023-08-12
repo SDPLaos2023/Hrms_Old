@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header">
+    <div class="btn-group"></div>
+  </div>
+  <div class="card-body">
+    <div class="col-12">
+      <div class="table-responsive" style="overflow-x: auto">
+        <table
+          datatable
+          [dtOptions]="dtOptions"
+          [dtTrigger]="dtTrigger"
+          class="table table-boarderd row-border hover"
+        >
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ID</th>
+              <th>User ID ປະຈຳເຄື່ອງປ້ຳໂມງ</th>
+              <th>ລຳດັບນິ້ວມື</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.id }}</td>
+              <td>{{ item.fingerUserId }}</td>
+              <td>{{ item.fingerIndex }}</td>
+              <td>
+                {{ item.fingerIng == null ? "ຍັງບໍ່ລົງທະບຽນ" : item.status }}
+              </td>
+              <td>
+                <div class="btn-group">
+                  <a
+                    routerLink="{{ '/fingerprints/' + item.id }}"
+                    class="btn btn-sm btn-outline-info"
+                  >
+                    <i class="fas fa-fingerprint"></i>
+                  </a>
+                  &nbsp;
+                  <button
+                    class="btn btn-sm btn-outline-danger"
+                    *ngIf="item.fingerImg != null"
+                  >
+                    <i class="fas fa-fingerprint"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-sm btn-outline-primary" [routerLink]="[url]">
+        <i class="fa fa-arrow-left"></i>
+        ກັບຄືນ
+      </button>
+    </div>
+  </div>
+</div>

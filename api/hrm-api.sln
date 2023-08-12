@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hrm-api", "hrm-api.csproj", "{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}.Debug|x86.Build.0 = Debug|Any CPU
+		{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}.Release|x86.ActiveCfg = Release|Any CPU
+		{D1ABD4CF-20BA-49FF-A149-FDE4A774BD0E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52EAF4B6-5E2B-41EA-BB4B-3FD501AE5F4B}
+	EndGlobalSection
+EndGlobal
